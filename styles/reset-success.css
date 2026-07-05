@@ -1,0 +1,81 @@
+:root {
+    --primary-green: #147A42;
+    --primary-hover: #106335;
+    --bg-color: #FCFDFD;
+    --desktop-bg: #F4F9F6;
+    --text-dark: #1A1A1A;
+    --text-gray: #666666;
+    --border-color: #E0E0E0;
+    --error-red: #D32F2F;
+    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--desktop-bg);
+    color: var(--text-dark);
+}
+
+.overlay-container {
+    width: 100%;
+    margin-top: 40px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.success-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 40px 32px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-circle {
+    background-color: #E8F7EE; /* Light green */
+    color: var(--primary-green);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.success-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 32px;
+}
+
+.action-btn {
+    width: 100%;
+    background-color: var(--primary-green);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-hover);
+}
