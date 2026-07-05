@@ -1,0 +1,217 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --primary-green: #147A42;
+    --primary-hover: #106335;
+    --bg-color: #FCFDFD;
+    --desktop-bg: #F4F9F6;
+    --text-dark: #1A1A1A;
+    --text-gray: #666666;
+    --border-color: #E0E0E0;
+    --error-red: #D32F2F;
+    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+}
+
+/* --- Container & Layout (Mobile First - Small Screens) --- */
+.signup-container {
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Navigation */
+.top-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-dark);
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.brand-logo {
+    height: 100px;
+}
+
+/* Typography */
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: var(--text-gray);
+    margin-bottom: 32px;
+}
+
+/* Forms & Inputs */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #999999;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-green);
+}
+
+.form-group input.input-error {
+    border-color: var(--error-red);
+}
+
+/* Password Wrapper */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 48px; /* Space for the icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.error-text {
+    color: var(--error-red);
+    font-size: 12px;
+    margin-top: 6px;
+    display: none;
+}
+
+/* Form Messages (Success/Error API returns) */
+.form-message {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: none;
+    text-align: center;
+}
+.form-message.error {
+    background-color: #FDECEA;
+    color: var(--error-red);
+    display: block;
+}
+.form-message.success {
+    background-color: #E8F7EE;
+    color: var(--primary-green);
+    display: block;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary-green);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.submit-btn:disabled {
+    background-color: #A5D6B9;
+    cursor: not-allowed;
+}
+
+/* --- Media Queries --- */
+
+/* Medium Screens (Tablets, >= 600px) */
+@media (min-width: 600px) {
+    body {
+        background-color: var(--desktop-bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .signup-container {
+        background-color: var(--bg-color);
+        max-width: 500px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        padding: 40px;
+    }
+
+    .top-nav {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+
+    .back-btn {
+        margin-bottom: 0;
+        margin-right: 16px;
+    }
+}
+
+/* Large Screens (Desktops, >= 992px) */
+@media (min-width: 992px) {
+    .signup-container {
+        max-width: 600px; /* Gives a bit more breathing room on large displays */
+        padding: 48px;
+    }
+
+    /* Optional: arrange inputs in a 2-column grid for larger screens if desired, 
+       but standard auth forms usually remain single-column for readability */
+}

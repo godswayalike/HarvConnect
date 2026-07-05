@@ -1,0 +1,224 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --primary-green: #147A42;
+    --primary-hover: #106335;
+    --bg-color: #FCFDFD;
+    --desktop-bg: #F4F9F6;
+    --text-dark: #1A1A1A;
+    --text-gray: #666666;
+    --border-color: #E0E0E0;
+    --error-red: #D32F2F;
+    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+}
+
+/* --- Container & Layout (Mobile First) --- */
+.auth-container {
+    width: min(100%, 600px);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-nav {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.brand-logo {
+    height: 100px;
+}
+
+/* Typography */
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.page-subtitle {
+    font-size: 15px;
+    color: var(--text-gray);
+    margin-bottom: 32px;
+}
+
+/* Forms & Inputs */
+.form-group {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+    background-color: #FFFFFF;
+    transition: border-color 0.2s ease;
+    appearance: none; /* Removes native select styling */
+}
+
+.form-group input::placeholder,
+.form-group select:invalid {
+    color: #999999;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-green);
+}
+
+.input-error {
+    border-color: var(--error-red) !important;
+}
+
+/* Input Wrappers (Icons & Selects) */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    padding-right: 48px; 
+}
+
+.icon-btn {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #999999;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.select-icon {
+    position: absolute;
+    right: 16px;
+    color: #1A1A1A;
+    font-size: 20px;
+    pointer-events: none; /* Allows clicking the select underneath */
+}
+
+.error-text {
+    color: var(--error-red);
+    font-size: 12px;
+    margin-top: 6px;
+    display: none;
+}
+
+/* Form Messages */
+.form-message {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: none;
+    text-align: center;
+}
+.form-message.error {
+    background-color: #FDECEA;
+    color: var(--error-red);
+    display: block;
+}
+.form-message.success {
+    background-color: #E8F7EE;
+    color: var(--primary-green);
+    display: block;
+}
+
+/* Button & Links */
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary-green);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 8px;
+    margin-bottom: 32px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.submit-btn:disabled {
+    background-color: #A5D6B9;
+    cursor: not-allowed;
+}
+
+.footer-links {
+    text-align: center;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.highlight-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forgot-password-link {
+    display: block;
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+/* --- Media Queries --- */
+
+/* Medium Screens (Tablets, >= 600px) */
+@media (min-width: 600px) {
+    body {
+        background-color: var(--desktop-bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .auth-container {
+        background-color: var(--bg-color);
+        max-width: 480px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        padding: 40px;
+    }
+
+    .top-nav {
+        justify-content: center;
+        margin-top: 0;
+    }
+}

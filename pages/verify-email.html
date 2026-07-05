@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Verify Email</title>
+    <link rel="stylesheet" href="../styles/farmer-signup.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="signup-container">
+        <header class="top-nav">
+            <button class="back-btn" aria-label="Go back" onclick="window.history.back()">
+                <i class="ph-bold ph-caret-left"></i>
+            </button>
+            <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo" class="brand-logo">
+        </header>
+
+        <main>
+            <h1 class="page-title">Verify your email</h1>
+            <p class="page-subtitle">We've sent a verification code to your email address.</p>
+
+            <form id="verifyForm" class="signup-form" novalidate>
+                <div class="form-group">
+                    <label for="otpCode">Verification Code</label>
+                    <input type="text" id="otpCode" name="otpCode" placeholder="Enter 6-digit code" required autocomplete="off">
+                    <span class="error-text" id="otpCodeError"></span>
+                </div>
+
+                <div id="formMessage" class="form-message"></div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Verify Account</button>
+            </form>
+            
+            <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+                Didn't receive the code? <a href="#" id="resendCode" style="color: var(--primary-green); font-weight: 600; text-decoration: none;">Resend</a>
+            </p>
+        </main>
+    </div>
+
+    <script src="../scripts/verify-email.js"></script>
+</body>
+</html>
