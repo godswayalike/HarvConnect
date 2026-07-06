@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Add Produce</title>
+    <link rel="stylesheet" href="../styles/add-produce.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="main-nav">
+            <a href="../pages/farmer-dashboard.html" class="nav-item active">
+                <i class="ph-fill ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="../pages/orders.html" class="nav-item">
+                <i class="ph ph-shopping-bag"></i>
+                <span>Orders</span>
+            </a>
+            <a href="../pages/chat.html" class="nav-item">
+                <i class="ph ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="../pages/profile.html" class="nav-item">
+                <i class="ph ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="page-header">
+                <button class="back-btn" aria-label="Go back" onclick="window.location.href='../pages/farmer-dashboard.html'">
+                    <i class="ph-bold ph-caret-left"></i>
+                </button>
+                <h1 class="page-title">Add Produce</h1>
+            </header>
+
+            <div class="form-container">
+                <form id="addProduceForm" novalidate>
+                    
+                    <div class="image-upload-wrapper">
+                        <input type="file" id="produceImage" name="produceImage" accept="image/*" class="file-input" hidden>
+                        <label for="produceImage" class="image-upload-box" id="imageUploadBox">
+                            <div class="upload-content" id="uploadContent">
+                                <div class="upload-icon-wrapper">
+                                    <i class="ph-bold ph-plus"></i>
+                                </div>
+                                <span>Add photos of your produce</span>
+                            </div>
+                        </label>
+                        <span class="error-text" id="imageError">Please add a photo.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" name="productName" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" placeholder="0" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="unit">Unit</label>
+                            <select id="unit" name="unit" required>
+                                <option value="kg">Kilograms (kg)</option>
+                                <option value="bags">Bags</option>
+                                <option value="crates">Crates</option>
+                                <option value="bunches">Bunches</option>
+                                <option value="tonnes">Tonnes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price per kg (GHS)</label>
+                        <input type="number" id="price" name="price" placeholder="e.g, 20" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="minOrder">Minimum Order Quantity</label>
+                        <input type="number" id="minOrder" name="minOrder" placeholder="e.g, 10" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="details">Product Details</label>
+                        <textarea id="details" name="details" rows="4" placeholder="Add details about quality, farming method, etc" required></textarea>
+                    </div>
+
+                    <div id="formMessage" class="form-message"></div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Add Produce</button>
+                </form>
+            </div>
+            
+            <div class="mobile-bottom-spacer"></div>
+        </main>
+    </div>
+
+    <script src="../scripts/add-produce.js"></script>
+</body>
+</html>

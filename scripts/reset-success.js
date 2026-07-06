@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const dashboardBtn = document.getElementById('dashboardBtn');
+    const loginBtn = document.getElementById('loginBtn');
 
-    dashboardBtn.addEventListener('click', () => {
+    loginBtn.addEventListener('click', () => {
         window.location.href = '../pages/login.html';
     });
 });
