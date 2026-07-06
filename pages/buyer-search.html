@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | HarvConnect</title>
+    <title>Search | HarvConnect</title>
     <link rel="stylesheet" href="../styles/buyer-shared.css" />
     <link rel="stylesheet" href="../styles/buyer-dashboard.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -21,11 +21,11 @@
         </div>
 
         <nav class="sidebar-nav">
-          <a href="buyer-dashboard.html" class="nav-link active" data-page="dashboard">
+          <a href="buyer-dashboard.html" class="nav-link" data-page="dashboard">
             <i class="ph ph-squares-four"></i>
             <span>Marketplace</span>
           </a>
-          <a href="buyer-search.html" class="nav-link" data-page="search">
+          <a href="buyer-search.html" class="nav-link active" data-page="search">
             <i class="ph ph-magnifying-glass"></i>
             <span>Search</span>
           </a>
@@ -64,6 +64,7 @@
                 id="searchInput" 
                 placeholder="Search for fresh produce..." 
                 aria-label="Search products"
+                autofocus
               />
             </div>
           </div>
@@ -78,50 +79,70 @@
 
         <!-- Content Area -->
         <section class="content-area">
-          <!-- Welcome Card -->
+          <!-- Search Header -->
           <div class="welcome-card">
             <div class="welcome-content">
-              <p class="eyebrow">Buyer Dashboard</p>
-              <h1 id="welcomeMessage">Welcome back!</h1>
+              <p class="eyebrow">Search</p>
+              <h1 id="searchTitle">Find Fresh Produce</h1>
               <p class="welcome-copy">
-                Discover fresh produce from trusted local farmers. Support your community 
-                and enjoy the freshest ingredients delivered to your doorstep.
+                Search across all available products from local farmers.
               </p>
             </div>
           </div>
 
-          <!-- Categories Section -->
-          <div class="categories-section">
+          <!-- Filters Section -->
+          <div class="filters-section">
             <div class="section-header">
-              <h2>Shop by Category</h2>
+              <h2>Filters</h2>
+              <button class="section-action" id="clearFiltersBtn">
+                <i class="ph ph-x"></i>
+                Clear All
+              </button>
             </div>
-            <div class="categories-scroll" id="categoriesContainer" role="tablist" aria-label="Product categories">
-              <!-- Categories will be rendered here -->
+            
+            <!-- Categories -->
+            <div class="categories-section">
+              <h3 class="filter-label">Category</h3>
+              <div class="categories-scroll" id="categoriesContainer" role="tablist" aria-label="Product categories">
+                <!-- Categories rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Additional Filters -->
+            <div class="advanced-filters">
+              <div class="filter-group">
+                <label class="form-label" for="farmerFilter">Farmer</label>
+                <select class="form-select" id="farmerFilter">
+                  <option value="">All Farmers</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label class="form-label" for="locationFilter">Location</label>
+                <select class="form-select" id="locationFilter">
+                  <option value="">All Locations</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label class="form-label" for="sortFilter">Sort By</label>
+                <select class="form-select" id="sortFilter">
+                  <option value="relevance">Relevance</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="name">Name</option>
+                </select>
+              </div>
             </div>
           </div>
 
-          <!-- Featured Products Section -->
-          <div class="products-section">
-            <div class="section-header">
-              <h2>Featured Produce</h2>
-              <button class="section-action" id="viewAllBtn">View All</button>
+          <!-- Results Section -->
+          <div class="results-section">
+            <div class="results-header">
+              <h2 id="resultsTitle">All Products</h2>
+              <span class="results-count" id="resultsCount">0 products</span>
             </div>
-            <div class="products-grid" id="produceGrid" aria-live="polite" aria-busy="false">
-              <!-- Products will be rendered here -->
-            </div>
-          </div>
-
-          <!-- Nearby Products Section -->
-          <div class="products-section" id="nearbySection" style="display: none;">
-            <div class="section-header">
-              <h2>Nearby Products</h2>
-              <span class="section-action" id="locationStatus">
-                <i class="ph ph-map-pin"></i>
-                <span id="locationText">Detecting location...</span>
-              </span>
-            </div>
-            <div class="products-grid" id="nearbyGrid" aria-live="polite">
-              <!-- Nearby products will be rendered here -->
+            <div class="products-grid" id="searchResults" aria-live="polite" aria-busy="false">
+              <!-- Search results rendered here -->
             </div>
           </div>
         </section>
@@ -131,6 +152,6 @@
     <!-- Scripts -->
     <script src="../scripts/api.js"></script>
     <script src="../scripts/buyer-shared.js"></script>
-    <script src="../scripts/buyer-dashboard.js"></script>
+    <script src="../scripts/buyer-search.js"></script>
   </body>
 </html>

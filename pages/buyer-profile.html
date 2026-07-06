@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | HarvConnect</title>
+    <title>Profile | HarvConnect</title>
     <link rel="stylesheet" href="../styles/buyer-shared.css" />
     <link rel="stylesheet" href="../styles/buyer-dashboard.css" />
+    <link rel="stylesheet" href="../styles/buyer-profile.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body>
@@ -21,7 +22,7 @@
         </div>
 
         <nav class="sidebar-nav">
-          <a href="buyer-dashboard.html" class="nav-link active" data-page="dashboard">
+          <a href="buyer-dashboard.html" class="nav-link" data-page="dashboard">
             <i class="ph ph-squares-four"></i>
             <span>Marketplace</span>
           </a>
@@ -38,7 +39,7 @@
             <i class="ph ph-chat-circle-dots"></i>
             <span>Messages</span>
           </a>
-          <a href="buyer-profile.html" class="nav-link" data-page="profile">
+          <a href="buyer-profile.html" class="nav-link active" data-page="profile">
             <i class="ph ph-user"></i>
             <span>Profile</span>
           </a>
@@ -77,53 +78,8 @@
         </header>
 
         <!-- Content Area -->
-        <section class="content-area">
-          <!-- Welcome Card -->
-          <div class="welcome-card">
-            <div class="welcome-content">
-              <p class="eyebrow">Buyer Dashboard</p>
-              <h1 id="welcomeMessage">Welcome back!</h1>
-              <p class="welcome-copy">
-                Discover fresh produce from trusted local farmers. Support your community 
-                and enjoy the freshest ingredients delivered to your doorstep.
-              </p>
-            </div>
-          </div>
-
-          <!-- Categories Section -->
-          <div class="categories-section">
-            <div class="section-header">
-              <h2>Shop by Category</h2>
-            </div>
-            <div class="categories-scroll" id="categoriesContainer" role="tablist" aria-label="Product categories">
-              <!-- Categories will be rendered here -->
-            </div>
-          </div>
-
-          <!-- Featured Products Section -->
-          <div class="products-section">
-            <div class="section-header">
-              <h2>Featured Produce</h2>
-              <button class="section-action" id="viewAllBtn">View All</button>
-            </div>
-            <div class="products-grid" id="produceGrid" aria-live="polite" aria-busy="false">
-              <!-- Products will be rendered here -->
-            </div>
-          </div>
-
-          <!-- Nearby Products Section -->
-          <div class="products-section" id="nearbySection" style="display: none;">
-            <div class="section-header">
-              <h2>Nearby Products</h2>
-              <span class="section-action" id="locationStatus">
-                <i class="ph ph-map-pin"></i>
-                <span id="locationText">Detecting location...</span>
-              </span>
-            </div>
-            <div class="products-grid" id="nearbyGrid" aria-live="polite">
-              <!-- Nearby products will be rendered here -->
-            </div>
-          </div>
+        <section class="content-area" id="profileContent">
+          <!-- Profile content will be rendered here -->
         </section>
       </main>
     </div>
@@ -131,6 +87,6 @@
     <!-- Scripts -->
     <script src="../scripts/api.js"></script>
     <script src="../scripts/buyer-shared.js"></script>
-    <script src="../scripts/buyer-dashboard.js"></script>
+    <script src="../scripts/buyer-profile.js"></script>
   </body>
 </html>
