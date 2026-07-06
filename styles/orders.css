@@ -223,8 +223,14 @@ body {
         margin-bottom: 8px;
     }
 
-    .nav-item.active { background-color: #E8F7EE; }
-    .mobile-bottom-spacer { display: none; }
+    .nav-item.active {
+        background-color: #E8F7EE;
+    }
+
+    .mobile-bottom-spacer { 
+        display: none;
+    }
+    
     .page-header { padding: 40px 40px 24px 40px; }
     .orders-container { padding: 0 40px 40px 40px; margin: 0; }
 
