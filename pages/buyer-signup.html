@@ -1,73 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HarvConnect - Buyer Sign Up</title>
-    <link rel="stylesheet" href="../styles/buyer-signup.css">
+    <link rel="stylesheet" href="../styles/buyer-signup.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="signup-container">
-        <header class="top-nav">
-            <button class="back-btn" aria-label="Go back">
-                <i class="ph-bold ph-caret-left"></i>
-            </button>
-            <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo" class="brand-logo">
-        </header>
+      <header class="top-nav">
+        <button class="back-btn" aria-label="Go back">
+          <i class="ph-bold ph-caret-left"></i>
+        </button>
+        <img
+          src="../images/HarvConnect-logo.png"
+          alt="HarvConnect Logo"
+          class="brand-logo"
+        />
+      </header>
 
-        <main>
-            <h1 class="page-title">Create your account</h1>
-            <p class="page-subtitle">Join other buyers purchase fresh products daily</p>
+      <main>
+        <h1 class="page-title">Create your account</h1>
+        <p class="page-subtitle">
+          Join other buyers purchase fresh products daily
+        </p>
 
-            <form id="buyerSignupForm" class="signup-form" novalidate>
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Kwame Adam" required>
-                    <span class="error-text" id="fullNameError"></span>
-                </div>
+        <form id="buyerSignupForm" class="signup-form" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Kwame Adam"
+              required
+            />
+            <span class="error-text" id="fullNameError"></span>
+          </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="0543210987" required>
-                    <span class="error-text" id="phoneError"></span>
-                </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="0543210987"
+              required
+            />
+            <span class="error-text" id="phoneError"></span>
+          </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="kwameadam@gmail.com" required>
-                    <span class="error-text" id="emailError"></span>
-                </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="kwameadam@gmail.com"
+              required
+            />
+            <span class="error-text" id="emailError"></span>
+          </div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" name="password" placeholder="••••••••" required>
-                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
-                            <i class="ph ph-eye-slash" id="togglePasswordIcon"></i>
-                        </button>
-                    </div>
-                    <span class="error-text" id="passwordError"></span>
-                </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                aria-label="Toggle password visibility"
+              >
+                <i class="ph ph-eye-slash" id="togglePasswordIcon"></i>
+              </button>
+            </div>
+            <span class="error-text" id="passwordError"></span>
+          </div>
 
-                <div class="form-group">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" name="location" placeholder="Region + Market/Town" required>
-                </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="Region + Market/Town"
+              required
+            />
+          </div>
 
-                <div class="form-group">
-                    <label for="produceType">what type of buyer are you?</label>
-                    <input type="text" id="produceType" name="produceType" placeholder="Retailer/Wholesaler" required>
-                </div>
+          <div class="form-group">
+            <label for="produceType">what type of buyer are you?</label>
+            <input
+              type="text"
+              id="produceType"
+              name="produceType"
+              placeholder="Retailer/Wholesaler"
+              required
+            />
+          </div>
 
-                <div id="formMessage" class="form-message"></div>
-                
-                <button type="submit" class="submit-btn" id="submitBtn">Sign Up</button>
-            </form>
-        </main>
+          <div id="formMessage" class="form-message"></div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Sign Up
+          </button>
+        </form>
+      </main>
     </div>
 
+    <script src="../scripts/api.js"></script>
     <script src="../scripts/buyer-signup.js"></script>
-</body>
+  </body>
 </html>

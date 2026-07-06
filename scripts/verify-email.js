@@ -18,9 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
         submitBtn.textContent = 'Verifying...';
         otpInput.classList.remove('input-error');
 
+        const BASE_URL = 'https://harvconnect-backend-api-v1-production.up.railway.app';
+
         try {
             // Integrating with the endpoint from your documentation
-            const response = await fetch('/api/v1/auth/verify-email', {
+            const response = await fetch(`${BASE_URL}/api/v1/auth/verify-email`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ code: code })
