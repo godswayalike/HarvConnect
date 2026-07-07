@@ -1,55 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Screen Transition Logic ---
-  const splashScreen = document.getElementById("splash-screen");
-  const roleScreen = document.getElementById("role-selection-screen");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navLinks = Array.from(document.querySelectorAll('.desktop-nav a'));
+    const sections = ['problem', 'how-it-works', 'roles'];
 
-  // Display splash screen for 2.5 seconds, then fade to role selection
-  setTimeout(() => {
-    splashScreen.classList.remove("active");
-    roleScreen.classList.add("active");
-  }, 2500);
+    const setActiveNavLink = () => {
+        const scrollPosition = window.scrollY + 120;
 
-  // --- Role Selection Logic ---
-  const roleCards = document.querySelectorAll(".role-card");
+        let activeSection = '';
+        sections.forEach((sectionId) => {
+            const section = document.getElementById(sectionId);
+            if (section && scrollPosition >= section.offsetTop) {
+                activeSection = sectionId;
+            }
+        });
 
-  roleCards.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      e.preventDefault();
-      const selectedRole = card.getAttribute("data-role");
-      const roleMap = {
-        Farmer: "FARMER",
-        Buyer: "BUYER",
-        Transport: "TRANSPORT",
-      };
-      const normalizedRole = roleMap[selectedRole] || selectedRole;
+        navLinks.forEach((link) => {
+            const href = link.getAttribute('href');
+            const isActive = href === `#${activeSection}`;
+            link.classList.toggle('active', isActive);
+        });
+    };
 
-      // Highlight selection visually
-      roleCards.forEach((c) => (c.style.borderColor = "#F0F0F0"));
-      card.style.borderColor = "var(--primary-green)";
+    if (menuToggle && mobileMenu) {
+        const setMenuState = (isOpen) => {
+            mobileMenu.style.display = isOpen ? "flex" : "none";
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.innerHTML = isOpen ? '<i class="ph ph-x"></i>' : '<i class="ph ph-list"></i>';
+        };
 
-      // Save the selected role to localStorage so it can be used on the next screen during the POST /api/v1/auth/register request
-      localStorage.setItem("harvconnect_user_role", normalizedRole);
+        menuToggle.addEventListener("click", () => {
+            const isMenuOpen = menuToggle.getAttribute("aria-expanded") === "true";
+            setMenuState(!isMenuOpen);
+        });
 
-      const routeMap = {
-        FARMER: "pages/farmer-signup.html",
-        BUYER: "pages/buyer-signup.html",
-        TRANSPORT: "pages/transporter-signup.html",
-      };
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                setMenuState(false);
+            });
+        });
+    }
 
-      console.log(
-        `Role selected: ${normalizedRole}. Proceeding to registration...`,
-      );
-      window.location.href =
-        routeMap[normalizedRole] || "pages/farmer-signup.html";
-    });
-  });
-
-  // --- Login Link Logic ---
-  const loginLink = document.getElementById("login-link");
-  loginLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log("Navigating to Login screen...");
-    // TODO: Route to Login Screen
-    window.location.href = "./pages/login.html";
-  });
+    setActiveNavLink();
+    window.addEventListener('scroll', setActiveNavLink, { passive: true });
 });
