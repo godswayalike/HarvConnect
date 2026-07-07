@@ -72,9 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Logging in...';
 
+        const BASE_URL = 'https://harvconnect-backend-api-v1-production.up.railway.app';
+
         try {
             // Integrating with the login endpoint outlined in the docs 
-            const response = await fetch('/api/v1/auth/login', {
+            const response = await fetch(`${BASE_URL}/api/v1/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password, role })

@@ -1,80 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HarvConnect - Welcome</title>
-    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="styles.css" />
     <!-- Phosphor Icons for clean, lightweight UI icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Splash Screen -->
     <div id="splash-screen" class="screen active">
-        <div class="splash-content">
-            <!-- HarvConnect Logo -->
-            <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo" class="logo-large">
-        </div>
+      <div class="splash-content">
+        <!-- HarvConnect Logo -->
+        <img
+          src="images/HarvConnect-logo.png"
+          alt="HarvConnect Logo"
+          class="logo-large"
+        />
+      </div>
     </div>
 
     <!-- Role Selection Screen -->
     <div id="role-selection-screen" class="screen">
-        <div class="container">
-            <header>
-                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo" class="logo-small">
-            </header>
+      <div class="container">
+        <header>
+          <img
+            src="images/HarvConnect-logo.png"
+            alt="HarvConnect Logo"
+            class="logo-small"
+          />
+        </header>
 
-            <main>
-                <h1 class="page-title">Create your account</h1>
-                <p class="page-subtitle">Choose what role best describes you</p>
+        <main>
+          <h1 class="page-title">Create your account</h1>
+          <p class="page-subtitle">Choose what role best describes you</p>
 
-                <div class="role-options">
-                    <!-- Farmer Role -->
-                    <div class="role-card" data-role="Farmer">
-                        <div class="icon-wrapper">
-                            <i class="ph ph-plant"></i>
-                        </div>
-                        <div class="role-info"> <a href="../pages/farmer-signup.html"><h2>Farmer</h2>
-                            <p>List and sell your produce</p></a>   
-                        </div>
-                    </div>
+          <div class="role-options">
+            <!-- Farmer Role -->
+            <div class="role-card" data-role="Farmer">
+              <div class="icon-wrapper">
+                <i class="ph ph-plant"></i>
+              </div>
+              <div class="role-info">
+                <a href="pages/farmer-signup.html"
+                  ><h2>Farmer</h2>
+                  <p>List and sell your produce</p></a
+                >
+              </div>
+            </div>
 
-                    <!-- Buyer Role -->
-                    <div class="role-card" data-role="Buyer">
-                        <div class="icon-wrapper">
-                            <i class="ph ph-basket"></i>
-                        </div>
-                        <div class="role-info">
-                            <a href="../pages/buyer-signup.html">
-                                <h2>Buyer</h2>
-                                <p>Discover and purchase fresh products</p>
-                            </a>
-                        </div>
-                    </div>
+            <!-- Buyer Role -->
+            <div class="role-card" data-role="Buyer">
+              <div class="icon-wrapper">
+                <i class="ph ph-basket"></i>
+              </div>
+              <div class="role-info">
+                <a href="pages/buyer-signup.html">
+                  <h2>Buyer</h2>
+                  <p>Discover and purchase fresh products</p>
+                </a>
+              </div>
+            </div>
 
-                    <!-- Transport Provider Role -->
-                    <div class="role-card" data-role="Transport">
-                        <div class="icon-wrapper">
-                            <i class="ph ph-truck"></i>
-                        </div>
-                        <div class="role-info">
-                            <a href="../pages/transporter-signup.html">
-                                <h2>Transport Provider</h2>
-                                <p>Deliver produce and earn</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Transport Provider Role -->
+            <div class="role-card" data-role="Transport">
+              <div class="icon-wrapper">
+                <i class="ph ph-truck"></i>
+              </div>
+              <div class="role-info">
+                <a href="pages/transporter-signup.html">
+                  <h2>Transport Provider</h2>
+                  <p>Deliver produce and earn</p>
+                </a>
+              </div>
+            </div>
+          </div>
 
-                <div class="login-prompt">
-                    <p>Already have an account?
-                        <a href="../pages/login.html" id="login-link">Log In</a></p>
-                </div>
-            </main>
-        </div>
+          <div class="login-prompt">
+            <p>
+              Already have an account?
+              <a href="../pages/login.html" id="login-link">Log In</a>
+            </p>
+          </div>
+        </main>
+      </div>
     </div>
 
-    <script src="../scripts/signup.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
