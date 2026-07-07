@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="./images/HarvConnect-logo.png" alt="HarvConnect Logo" class="brand-logo" onerror="this.style.display='none'">
+                <!--<span class="brand-name"><span class="accent-green">Harv</span>connect</span> -->
+            </div>
+            <nav class="desktop-nav">
+                <a href="#problem">The Problem</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#roles">Our Solutions</a>
+            </nav>
+            <div class="cta-group">
+                <a href="./pages/signup.html" class="btn-nav-get-started">Get Started</a>
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-menu" id="mobileMenu">
+        <a href="#problem" class="mobile-link">The Problem</a>
+        <a href="#how-it-works" class="mobile-link">How It Works</a>
+        <a href="#roles" class="mobile-link">Our Solutions</a>
+        <a href="./pages/signup.html" class="mobile-link highlight">Get Started</a>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content-container">
+            <h1 class="hero-headline">Fresh from the Farm.<br>Direct to Buyers.</h1>
+            <p class="hero-subtext">
+                Harvconnect links Ghana's small & large-scale vegetable farmers directly to buyers, enabling efficient coordination of transport and delivery
+            </p>
+            <div class="hero-action-buttons">
+                <a href="./pages/signup.html" class="btn-hero-primary">Enroll for Free <i class="ph ph-arrow-right"></i></a>
+                <a href="#how-it-works" class="btn-hero-secondary">See how it works</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" class="problem-section">
+        <div class="section-container">
+            <span class="section-tagline">THE PROBLEM</span>
+            <h2 class="section-title">Ghana loses up to <span class="text-danger">$3B</span> in produce every year</h2>
+            <p class="section-desc">Fragmentation, spoilage, and opaque pricing cost every participant in the vegetable supply chain. Harvconnect replaces that with coordination, fair prices, and direct trade.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>For Farmers</h3>
+                    <ul>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Forced to sell through exploitative middlemen</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> No way to reach buyers outside their local market</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> 30-50% of all harvest lost to spoilage</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Price volatility drops fair market prices</li>
+                    </ul>
+                </div>
+                <div class="problem-card">
+                    <h3>For Buyers</h3>
+                    <ul>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Struggle to find reliable, consistent supply</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> High effort to source quality produce</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Opaque pricing - no benchmarks by region</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Logistics failures to coordinate delivery</li>
+                    </ul>
+                </div>
+                <div class="problem-card">
+                    <h3>For Transport Providers</h3>
+                    <ul>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Fragmented load-matching pattern</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Poor coordination causes delays and spoilage</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Empty return trips waste up to 50% of revenue</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Irregular load demand from informal brokers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="section-container">
+            <span class="section-tagline">HOW IT WORKS</span>
+            <h2 class="section-title">From farm to buyers in 4 steps</h2>
+            <p class="section-desc">Harvconnect replaces fragmented informal trade with a coordinated, transparent process that creates value for farmers, buyers, and transport providers alike.</p>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                    </div>
+                    <div class="step-body">
+                        <h3>Farmers lists produce</h3>
+                        <p>Farmers upload verified listings - produce name, photo, quantity, units, price and product details.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                    </div>
+                    <div class="step-body">
+                        <h3>Buyers discovers supply</h3>
+                        <p>Buyers search or filter listings by the kind of produce, price, quality metrics, and region.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                    </div>
+                    <div class="step-body">
+                        <h3>Order & negotiate</h3>
+                        <p>Buyers send inquiries or place orders. Chats and management occur directly through the app ecosystem.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">04</span>
+                    </div>
+                    <div class="step-body">
+                        <h3>Transport & deliver</h3>
+                        <p>Nearby transport providers are matched to open jobs. Track deliveries live until safe dropoff points.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roles" class="roles-section">
+        <div class="section-container">
+            <span class="section-tagline">BUILT FOR EVERYONE</span>
+            <h2 class="section-title">One platform, three roles</h2>
+            <p class="section-desc">Whether you grow, buy, or move agricultural goods—Harvconnect is built for you.</p>
+
+            <div class="roles-grid">
+                <div class="role-action-card">
+                    <div class="role-icon-box"><i class="ph ph-plant"></i></div>
+                    <h3>For Farmers</h3>
+                    <p class="role-pitch">List your vegetables and connect directly with serious buyers across Ghana — no exploitative middlemen.</p>
+                    <ul class="role-checks">
+                        <li><i class="ph ph-check-circle icon-success"></i> Direct access to verified buyers</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Fair, transparent price discovery</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Cut post-harvest cargo losses</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Request transport in one tap</li>
+                    </ul>
+                    <a href="./pages/signup.html" class="btn-role-onboard">Join as a Farmer <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <div class="role-action-card">
+                    <div class="role-icon-box"><i class="ph ph-basket"></i></div>
+                    <h3>For Buyers</h3>
+                    <p class="role-pitch">Source fresh vegetables from a verified network of smallholders — consistent quality, transparent pricing, coordinated delivery.</p>
+                    <ul class="role-checks">
+                        <li><i class="ph ph-check-circle icon-success"></i> Search by produce, price and region</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Direct open negotiations</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> See structural market rates</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Track delivery end-to-end</li>
+                    </ul>
+                    <a href="./pages/signup.html" class="btn-role-onboard">Join as a Buyer <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <div class="role-action-card">
+                    <div class="role-icon-box"><i class="ph ph-truck"></i></div>
+                    <h3>For Transport provider</h3>
+                    <p class="role-pitch">Register your fleet, get matched with loads and delivery jobs — reduce empty return trips, grow your steady business revenue.</p>
+                    <ul class="role-checks">
+                        <li><i class="ph ph-check-circle icon-success"></i> Direct access to verified jobs</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Fair, transparent route payment</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Optimized matching timelines</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Maximize daily fleet utilization</li>
+                    </ul>
+                    <a href="./pages/signup.html" class="btn-role-onboard">Join as a Transporter <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="app-footer">
+        <div class="section-container">
+            <p>&copy; 2026 HarvConnect | Standardized Hackathon MVP System Setup</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
