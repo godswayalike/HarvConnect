@@ -3,11 +3,6 @@
    Extends buyer-shared.css with dashboard-specific components
 */
 
-/* ==================== DASHBOARD-SPECIFIC OVERRIDES ==================== */
-.dashboard-shell {
-  /* Already defined in buyer-shared.css */
-}
-
 /* ==================== WELCOME CARD ENHANCEMENTS ==================== */
 .welcome-card {
   background: linear-gradient(135deg, var(--primary-lighter) 0%, var(--primary-light) 100%);
@@ -82,8 +77,8 @@
 
 .categories-scroll {
   display: flex;
-  gap: var(--spacing-md);
-  overflow-x: auto;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
   padding: var(--spacing-sm) 0;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -95,7 +90,7 @@
 }
 
 .category-chip {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm) var(--spacing-lg);
@@ -171,8 +166,9 @@
 /* ==================== PRODUCT GRID ==================== */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--spacing-lg);
+  align-items: stretch;
 }
 
 /* ==================== PRODUCT CARD ==================== */
@@ -330,10 +326,15 @@
 .product-actions {
   display: flex;
   gap: var(--spacing-sm);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
 }
 
 .product-actions .btn {
   flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
 }
 
 /* ==================== LOADING SKELETON ==================== */
@@ -453,7 +454,7 @@
 /* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
 

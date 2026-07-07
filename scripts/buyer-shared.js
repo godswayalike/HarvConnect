@@ -47,7 +47,7 @@ const BuyerApp = (() => {
       unit: 'basket',
       rating: 4.5,
       available: true,
-      image: null,
+      image: '../images/Fresh Tomatoes.png',
       description: 'Fresh, ripe tomatoes harvested this morning. Perfect for cooking and salads.',
       stock: 50
     },
@@ -62,7 +62,7 @@ const BuyerApp = (() => {
       unit: 'bag',
       rating: 4.8,
       available: true,
-      image: null,
+      image: '../images/Fresh pepper.png',
       description: 'Spicy organic pepper grown without pesticides. Adds perfect heat to any dish.',
       stock: 30
     },
@@ -77,7 +77,7 @@ const BuyerApp = (() => {
       unit: 'sack',
       rating: 4.3,
       available: true,
-      image: null,
+      image: '../images/Green pepper.png',
       description: 'Nutritious garden eggs, great for stews and healthy eating.',
       stock: 25
     },
@@ -92,7 +92,7 @@ const BuyerApp = (() => {
       unit: 'basket',
       rating: 4.6,
       available: true,
-      image: null,
+      image: '../images/Spinach.png',
       description: 'Crisp fresh okra, perfect for soups and stews.',
       stock: 40
     },
@@ -107,7 +107,7 @@ const BuyerApp = (() => {
       unit: 'head',
       rating: 4.7,
       available: true,
-      image: null,
+      image: '../images/Lettuce.png',
       description: 'Crisp lettuce leaves, perfect for salads and sandwiches.',
       stock: 35
     },
@@ -122,7 +122,7 @@ const BuyerApp = (() => {
       unit: 'bag',
       rating: 4.4,
       available: true,
-      image: null,
+      image: '../images/Onions.png',
       description: 'Premium red onions with excellent flavor profile.',
       stock: 60
     }
