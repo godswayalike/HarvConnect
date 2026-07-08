@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - My Jobs</title>
+    <!-- Phosphor Icons for interface assets -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../styles/transporter-dashboard.css">
+    <link rel="stylesheet" href="../styles/transporter-job.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation (Desktop viewports) -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            <nav class="sidebar-menu">
+                <a href="../pages/transporter-dashboard.html" class="sidebar-link"><i class="ph ph-house"></i> Home</a>
+                <a href="#" class="sidebar-link active"><i class="ph ph-briefcase"></i> Jobs</a>
+                <a href="../pages/transporter-chat.html" class="sidebar-link"><i class="ph ph-chat-circle"></i> Chat</a>
+                <a href="../pages/transporter-profile.html" class="sidebar-link"><i class="ph ph-user"></i> Profile</a>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace Frame -->
+        <main class="main-content">
+            <div class="content-body">
+                <h1 class="page-main-title">My Jobs</h1>
+
+                <!-- Dynamic Jobs Flow Container (Matches 1000947584.jpg) -->
+                <div class="jobs-stack">
+                    
+                    <!-- Job Card 1: Available -->
+                    <div class="job-card" id="job-card-1">
+                        <div class="job-card-header">
+                            <h3 class="job-title">Fresh Tomatoes (5 crates)</h3>
+                            <div class="job-meta-pricing">
+                                <span class="job-price">GHS 180</span>
+                                <span class="job-distance">245km</span>
+                            </div>
+                        </div>
+                        <div class="job-route-details">
+                            <i class="ph ph-map-pin"></i>
+                            <p>Kumasi Farm, Accra Center Market</p>
+                        </div>
+                        <div class="job-action-area">
+                            <button class="btn-action-primary accept-trigger" onclick="openConfirmationModal('job-card-1')">Accept Delivery</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 2: Available -->
+                    <div class="job-card" id="job-card-2">
+                        <div class="job-card-header">
+                            <h3 class="job-title">Green Peppers (3 baskets)</h3>
+                            <div class="job-meta-pricing">
+                                <span class="job-price">GHS 60</span>
+                                <span class="job-distance">62km</span>
+                            </div>
+                        </div>
+                        <div class="job-route-details">
+                            <i class="ph ph-map-pin"></i>
+                            <p>Techiman, Sunyani</p>
+                        </div>
+                        <div class="job-action-area">
+                            <button class="btn-action-primary accept-trigger" onclick="openConfirmationModal('job-card-2')">Accept Delivery</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 3: Available -->
+                    <div class="job-card" id="job-card-3">
+                        <div class="job-card-header">
+                            <h3 class="job-title">Cassava (10 sacks)</h3>
+                            <div class="job-meta-pricing">
+                                <span class="job-price">GHS 95</span>
+                                <span class="job-distance">110km</span>
+                            </div>
+                        </div>
+                        <div class="job-route-details">
+                            <i class="ph ph-map-pin"></i>
+                            <p>Bono, Kumasi</p>
+                        </div>
+                        <div class="job-action-area">
+                            <button class="btn-action-primary accept-trigger" onclick="openConfirmationModal('job-card-3')">Accept Delivery</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 4: Pre-Accepted / In Progress -->
+                    <div class="job-card state-accepted" id="job-card-4">
+                        <div class="job-card-header">
+                            <h3 class="job-title">Onions (10 bags)</h3>
+                            <div class="job-meta-pricing">
+                                <span class="job-price">GHS 210</span>
+                                <span class="job-distance">45km</span>
+                            </div>
+                        </div>
+                        <div class="job-route-details">
+                            <i class="ph ph-map-pin"></i>
+                            <p>Kumasi Farm, Accra Center Market</p>
+                        </div>
+                        <div class="job-action-area">
+                            <button class="btn-action-primary delivery-trigger" onclick="markAsDelivered('job-card-4')">Mark as delivered</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 5: Pre-Completed Historical Data -->
+                    <div class="job-card state-completed">
+                        <div class="job-card-header">
+                            <h3 class="job-title">Red peppers (4 baskets)</h3>
+                            <div class="job-meta-pricing">
+                                <span class="job-price">GHS 65</span>
+                                <span class="status-badge-completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="job-route-details">
+                            <i class="ph ph-map-pin"></i>
+                            <p>Techiman, Sunyani</p>
+                        </div>
+                        <div class="job-action-area"></div>
+                    </div>
+
+                    <!-- Job Card 6: Pre-Completed Historical Data -->
+                    <div class="job-card state-completed">
+                        <div class="job-card-header">
+                            <h3 class="job-title">Plantain (10 bunches)</h3>
+                            <div class="job-meta-pricing">
+                                <span class="job-price">GHS 120</span>
+                                <span class="status-badge-completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="job-route-details">
+                            <i class="ph ph-map-pin"></i>
+                            <p>Eastern, Accra</p>
+                        </div>
+                        <div class="job-action-area"></div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile Bottom Nav bar (Mobile viewports) -->
+        <nav class="mobile-nav">
+            <a href="transporter-dashboard.html" class="mobile-nav-link">
+                <i class="ph ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="transporter-job.html" class="mobile-nav-link active">
+                <i class="ph ph-briefcase"></i>
+                <span>Jobs</span>
+            </a>
+            <a href="transporter-chat.html" class="mobile-nav-link">
+                <i class="ph ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="transporter-profile.html" class="mobile-nav-link">
+                <i class="ph ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- =========================================================
+         FLOW DIALOG MODAL LAYOUT OVERLAYS (Matches 1000947589.jpg)
+         ========================================================= -->
+    <div class="modal-overlay-backdrop hidden-overlay" id="flowModalOverlay">
+        
+        <!-- Screen Variant A: Confirmation Option Panel -->
+        <div class="modal-card-box" id="modalStepConfirmation">
+            <div class="modal-icon-center circle-dark-gray">
+                <i class="ph ph-question"></i>
+            </div>
+            <h2 class="modal-prompt-text">Are you sure you want to accept</h2>
+            <div class="modal-split-buttons">
+                <button class="btn-modal-cancel" onclick="closeFlowModal()">Cancel</button>
+                <button class="btn-modal-confirm" id="modalConfirmBtn">Accept</button>
+            </div>
+        </div>
+
+        <!-- Screen Variant B: Success Feedback Screen -->
+        <div class="modal-card-box hidden-step" id="modalStepSuccess">
+            <div class="modal-icon-center circle-light-green">
+                <i class="ph ph-check"></i>
+            </div>
+            <h2 class="modal-prompt-text font-bold">Delivery request accepted!</h2>
+            <button class="btn-modal-goback" onclick="completeFlowAndRefreshCard()">Go back</button>
+        </div>
+
+    </div>
+
+    <script src="../scripts/transporter-job.js"></script>
+
+</body>
+</html>

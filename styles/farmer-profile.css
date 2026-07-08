@@ -217,3 +217,17 @@ body { background-color: var(--bg-main); color: var(--text-dark); }
 .btn-stay:hover { 
     background: var(--primary-hover); 
 }
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-green);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 36px;
+}
+
+.sidebar-brand img {
+    height: 80px;
+}

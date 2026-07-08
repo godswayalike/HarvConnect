@@ -322,3 +322,29 @@ body { background-color: var(--bg-main); color: var(--text-dark); }
         padding: 16px;
     }
 }
+
+.sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+        background-color: var(--bg-pure-white);
+        border-right: 1px solid var(--border-soft);
+        padding: 24px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+
+    .sidebar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--primary-green);
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-bottom: 36px;
+    }
+
+    .sidebar-brand img {
+        height: 80px;
+    }

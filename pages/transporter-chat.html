@@ -4,35 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HarvConnect - Chat</title>
-    <link rel="stylesheet" href="../styles/farmer-chat.css">
+    <link rel="stylesheet" href="../styles/transporter-chat.css">
+    <link rel="stylesheet" href="../styles/transporter-dashboard.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
     <div class="app-layout">
         
-        <nav class="main-nav" id="mainNav">
+        <aside class="sidebar">
             <div class="sidebar-brand">
                 <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
             </div>
-            
-            <a href="farmer-dashboard.html" class="nav-item">
-                <i class="ph ph-house"></i>
-                <span>Home</span>
-            </a>
-            <a href="farmer-orders.html" class="nav-item">
-                <i class="ph ph-shopping-bag"></i>
-                <span>Orders</span>
-            </a>
-            <a href="farmer-chat.html" class="nav-item active">
-                <i class="ph-fill ph-chat-circle"></i>
-                <span>Chat</span>
-            </a>
-            <a href="farmer-profile.html" class="nav-item">
-                <i class="ph ph-user"></i>
-                <span>Profile</span>
-            </a>
-        </nav>
+            <nav class="sidebar-menu">
+                <a href="../pages/transporter-dashboard.html" class="sidebar-link"><i class="ph ph-house"></i> Home</a>
+                <a href="../pages/transporter-job.html" class="sidebar-link"><i class="ph ph-briefcase"></i> Jobs</a>
+                <a href="#" class="sidebar-link active"><i class="ph ph-chat-circle"></i> Chat</a>
+                <a href="../pages/transporter-profile.html" class="sidebar-link"><i class="ph ph-user"></i> Profile</a>
+            </nav>
+        </aside>
 
         <main class="main-content">
             
@@ -122,8 +112,27 @@
             
             <div class="mobile-bottom-spacer"></div>
         </main>
+
+        <nav class="mobile-nav">
+            <a href="transporter-dashboard.html" class="mobile-nav-link">
+                <i class="ph ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="transporter-job.html" class="mobile-nav-link">
+                <i class="ph ph-briefcase"></i>
+                <span>Jobs</span>
+            </a>
+            <a href="transporter-chat.html" class="mobile-nav-link active">
+                <i class="ph ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="transporter-profile.html" class="mobile-nav-link">
+                <i class="ph ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
     </div>
 
-    <script src="../scripts/farmer-chat.js"></script>
+    <script src="../scripts/transporter-chat.js"></script>
 </body>
 </html>
