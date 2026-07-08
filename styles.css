@@ -18,11 +18,29 @@
     scroll-behavior: smooth;
 }
 
+h1, h2, h3, h4, p, li, a, button {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 body {
     background-color: var(--bg-main);
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+html {
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 .section-container {
@@ -49,6 +67,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     padding: 0 24px;
 }
 
@@ -57,6 +76,7 @@ body {
     align-items: center;
     gap: 8px;
     min-width: 0;
+    flex: 1 1 auto;
 }
 
 .brand-logo {
@@ -75,7 +95,9 @@ body {
 
 .desktop-nav {
     display: flex;
-    gap: 32px;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .desktop-nav a {
@@ -86,6 +108,7 @@ body {
     transition: color 0.2s, border-bottom-color 0.2s;
     border-bottom: 2px solid transparent;
     padding-bottom: 4px;
+    white-space: nowrap;
 }
 
 .desktop-nav a:hover,
@@ -141,6 +164,15 @@ body {
     color: var(--text-dark);
     font-weight: 500;
     font-size: 16px;
+    width: fit-content;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+}
+
+.mobile-link.active,
+.mobile-link:hover {
+    color: var(--primary-green);
+    border-bottom-color: var(--primary-green);
 }
 
 .mobile-link.highlight {
@@ -166,6 +198,7 @@ body {
 }
 
 .hero-content-container {
+    width: 100%;
     max-width: 720px;
     z-index: 2;
 }
@@ -260,6 +293,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 32px 24px;
+    min-width: 0;
 }
 
 .problem-card h3 {
@@ -277,6 +311,7 @@ body {
     margin-bottom: 14px;
     font-size: 14px;
     color: #444;
+    flex-wrap: wrap;
 }
 
 .icon-danger {
@@ -304,6 +339,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(20, 122, 66, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 0;
 }
 
 .step-card:hover {
@@ -351,6 +387,7 @@ body {
     padding: 40px 32px;
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .role-icon-box {
@@ -387,11 +424,12 @@ body {
 
 .role-checks li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     font-size: 14px;
     margin-bottom: 12px;
     color: #333;
+    flex-wrap: wrap;
 }
 
 .icon-success {
@@ -417,16 +455,6 @@ body {
 
 .btn-role-onboard:hover { background-color: var(--primary-hover); }
 
-/* --- Footer --- */
-.app-footer {
-    background-color: #111;
-    color: #888;
-    text-align: center;
-    font-size: 14px;
-    border-top: 1px solid #222;
-}
-.app-footer .section-container { padding: 30px 24px; }
-
 /* --- Media Queries --- */
 @media (max-width: 1024px) {
     .header-container { padding: 0 20px; }
@@ -440,17 +468,17 @@ body {
 @media (max-width: 768px) {
     .desktop-nav { display: none; }
     .menu-toggle-btn { display: block; }
-    .header-container { padding: 0 16px; }
-    .logo-area { width: auto; flex: 1; }
-    .brand-logo { width: clamp(110px, 24vw, 150px); }
+    .header-container { padding: 0 14px; min-height: 70px; }
+    .logo-area { width: auto; flex: 1 1 auto; min-width: 0; }
+    .brand-logo { width: clamp(92px, 24vw, 120px); }
     .brand-name { font-size: clamp(15px, 4vw, 18px); }
-    .cta-group { gap: 8px; }
-    .btn-nav-get-started { padding: 8px 12px; font-size: 13px; }
+    .cta-group { gap: 6px; margin-left: auto; }
+    .btn-nav-get-started { display: none; }
     .section-container { padding: 48px 16px; }
-    .hero-section { padding: 72px 16px; min-height: auto; }
+    .hero-section { padding: 72px 16px; min-height: auto; overflow: hidden; }
     .hero-headline { font-size: clamp(28px, 7vw, 38px); }
     .hero-subtext { font-size: 15px; margin-bottom: 28px; }
-    .hero-action-buttons { flex-direction: column; align-items: stretch; }
+    .hero-action-buttons { flex-direction: column; align-items: stretch; gap: 12px; }
     .btn-hero-primary,
     .btn-hero-secondary { width: 100%; justify-content: center; padding: 14px 20px; }
     .problem-grid,
@@ -463,11 +491,416 @@ body {
 }
 
 @media (max-width: 480px) {
-    .header-container { padding: 0 14px; }
-    .brand-logo { width: 100px; }
-    .btn-nav-get-started { display: none; }
+    .header-container { padding: 0 12px; }
+    .brand-logo { width: 94px; }
     .section-container { padding: 40px 14px; }
     .hero-section { padding: 56px 14px; }
     .hero-headline { font-size: 26px; }
     .hero-subtext { font-size: 14px; }
+    .btn-hero-primary,
+    .btn-hero-secondary { padding: 12px 16px; font-size: 14px; }
+}
+
+@media (max-width: 390px) {
+    .hero-headline { font-size: 24px; line-height: 1.2; }
+    .hero-subtext { font-size: 13px; }
+    .problem-card,
+    .step-card,
+    .role-action-card {
+        padding: 18px 14px;
+    }
+    .step-number {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+}
+
+.section-container-new {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    padding: clamp(32px, 6vw, 60px) clamp(16px, 4vw, 24px);
+}
+
+.tagline-green-new {
+    display: block;
+    color: #10A352;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.tagline-gold-new {
+    display: block;
+    color: #FFB300;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.title-dark-new {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 800;
+    color: #000000;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.title-white-new {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.desc-dark-new {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 32px;
+}
+
+.desc-white-new {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+}
+
+/* --- 1. Live Marketplace Grid --- */
+.live-marketplace-section {
+    background-color: #EEFBF3;
+}
+
+.produce-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.produce-card-new {
+    background: #FFFFFF;
+    min-width: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #E2E8F0;
+}
+
+.farmer-review-card-new,
+.helpline-card-new {
+    min-width: 0;
+}
+
+.produce-img-placeholder-new {
+    width: 100%;
+    height: 130px;
+    background-color: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+}
+
+.img-filename-label {
+    font-size: 11px;
+    color: #94A3B8;
+    font-style: italic;
+}
+
+.produce-info-new {
+    padding: 14px;
+}
+
+.produce-info-new h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 2px;
+}
+
+.author-new {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.price-new {
+    font-size: 16px;
+    font-weight: 700;
+    color: #10A352;
+    margin-bottom: 6px;
+}
+
+.location-new {
+    font-size: 11px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* --- 2. From Our Farmers Stack --- */
+.from-farmers-section {
+    background-color: #10A352;
+}
+
+.testimonials-stack-new {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.farmer-review-card-new {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.review-stars-new {
+    color: #FFB300;
+    font-size: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 2px;
+}
+
+.review-text-new {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.farmer-profile-new {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.farmer-avatar-new {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #10A352;
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.farmer-avatar-new.color-a { background-color: #FFC107; }
+.farmer-avatar-new.color-b { background-color: #FF9800; }
+
+.farmer-meta-new h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 1px;
+}
+
+.farmer-meta-new span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- 3. Active Helpline Stack --- */
+.active-helpline-section {
+    background-color: #EEFBF3;
+    border-bottom: 1px solid #EAF2ED;
+}
+
+.helpline-stack-new {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.helpline-card-new {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid #E2E8F0;
+}
+
+.helpline-icon-wrap-new {
+    width: 36px;
+    height: 36px;
+    background-color: #EEFBF3;
+    color: #10A352;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.helpline-details-new h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 2px;
+}
+
+.helpline-sub-text {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.helpline-link-new {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #2563EB;
+    text-decoration: none;
+}
+
+/* --- 4. High Fidelity Footer View --- */
+.detailed-footer-new {
+    background-color: #FFFFFF;
+    padding: 48px 24px 24px 24px;
+}
+
+.footer-grid-container-new {
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer-logo-wrap-new .logo-main-text-new {
+    font-size: 24px;
+    font-weight: 800;
+    color: #10A352;
+}
+
+.footer-logo-wrap-new .logo-main-text-new span {
+    color: #FFB300;
+}
+
+.footer-tagline-desc-new {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #333333;
+    margin-top: 12px;
+}
+
+.footer-links-column-new h3 {
+    font-size: 12px;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.footer-links-column-new ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-column-new ul li {
+    font-size: 13.5px;
+    color: #333333;
+}
+
+.footer-links-column-new ul li a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.footer-bottom-bar-new {
+    margin-top: 48px;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 24px;
+    text-align: center;
+}
+
+.footer-bottom-bar-new p {
+    font-size: 11px;
+    color: #666666;
+}
+
+/* Adaptive Scaling for Larger Displays */
+@media (min-width: 768px) {
+    .section-container-new {
+        max-width: 1100px;
+        padding: 60px 24px;
+    }
+    .produce-grid-new {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .testimonials-stack-new {
+        flex-direction: row;
+    }
+    .farmer-review-card-new {
+        flex: 1;
+    }
+    .helpline-stack-new {
+        flex-direction: row;
+    }
+    .helpline-card-new {
+        flex: 1;
+    }
+    .footer-grid-container-new {
+        max-width: 1100px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .footer-identity-column-new {
+        max-width: 400px;
+    }
+}
+@media (max-width: 640px) {
+    .section-container-new {
+        padding: 32px 14px;
+    }
+    .produce-grid-new {
+        grid-template-columns: 1fr;
+    }
+    .produce-img-placeholder-new {
+        height: 140px;
+    }
+    .btn-role-onboard {
+        padding: 13px 14px;
+    }
+    .footer-grid-container-new {
+        gap: 24px;
+    }
+    .footer-links-column-new ul {
+        gap: 10px;
+    }
+    .title-dark-new,
+    .title-white-new {
+        font-size: clamp(22px, 6vw, 28px);
+    }
+}
+
+@media (max-width: 480px) {
+    .section-container-new {
+        padding: 32px 14px;
+    }
+    .hero-headline { font-size: 28px; }
+    .hero-subtext { font-size: 14px; }
+    .farmer-review-card-new,
+    .helpline-card-new {
+        padding: 16px;
+    }
+    .review-text-new {
+        font-size: 13px;
+    }
 }
