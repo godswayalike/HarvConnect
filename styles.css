@@ -596,21 +596,32 @@ img {
     min-width: 0;
 }
 
-.produce-img-placeholder-new {
+.produce-img-placeholder-new,
+.produce-card-new > .image {
     width: 100%;
-    height: 130px;
+    /* keep a consistent card image ratio */
+    aspect-ratio: 4 / 3;
+    height: auto;
     background-color: #F8FAFC;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    text-align: center;
+    display: block;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
-.img-filename-label {
-    font-size: 11px;
-    color: #94A3B8;
-    font-style: italic;
+.produce-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* visually center images that may be portrait/landscape */
+.produce-card-new img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-position: center center;
 }
 
 .produce-info-new {
