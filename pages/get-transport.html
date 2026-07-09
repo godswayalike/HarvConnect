@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Get Transport</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../styles/get-transport.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            <nav class="sidebar-menu">
+                <a href="farmer-dashboard.html" class="sidebar-link"><i class="ph ph-house"></i> Dashboard</a>
+                <a href="farmer-orders.html" class="sidebar-link active"><i class="ph ph-shopping-bag"></i> Orders</a>
+                <a href="farmer-chat.html" class="sidebar-link"><i class="ph ph-chat-circle"></i> Chat</a>
+                <a href="farmer-profile.html" class="sidebar-link"><i class="ph ph-user"></i> Profile</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="app-header">
+                <a href="javascript:history.back()" class="btn-back-arrow"><i class="ph ph-caret-left"></i></a>
+                <h1 class="page-title">Get Transport</h1>
+            </header>
+
+            <div class="scroll-body">
+                <h2 class="section-title">ORDER TO DELIVER</h2>
+                
+                <div class="card-item selected">
+                    <div class="icon-wrapper"><i class="ph ph-package"></i></div>
+                    <div class="card-content">
+                        <div class="card-title">Fresh Tomatoes</div>
+                        <div class="card-subtitle">Mama Efua Foods - 5 crates</div>
+                    </div>
+                    <div class="card-price">GHS 225</div>
+                </div>
+
+                <div class="card-item">
+                    <div class="icon-wrapper"><i class="ph ph-package"></i></div>
+                    <div class="card-content">
+                        <div class="card-title">Green Peppers</div>
+                        <div class="card-subtitle">Accra Fresh Ltd - 3 baskets</div>
+                    </div>
+                    <div class="card-price">GHS 90</div>
+
+                </div><div class="card-item">
+                    <div class="icon-wrapper"><i class="ph ph-package"></i></div>
+                    <div class="card-content">
+                        <div class="card-title">Cassava</div>
+                        <div class="card-subtitle">Kumasi Market - 10 sacks</div>
+                    </div>
+                    <div class="card-price">GHS 200</div>
+                </div>
+
+                <div class="card-item" style="cursor: default; border-style: dashed;">
+                    <div class="card-content">
+                        <div class="card-subtitle"><i class="ph ph-map-pin"></i> <strong>Pickup:</strong> Your farm location</div>
+                        <div class="card-subtitle" style="margin-top: 8px;"><i class="ph ph-truck"></i> <strong>Drop-off:</strong> Mama Efua Foods</div>
+                    </div>
+                </div>
+
+                <h2 class="section-title">AVAILABLE DRIVERS NEARBY</h2>
+
+                <div class="card-item" onclick="openDriverModal('Kofi Asante')">
+                    <div class="avatar-wrapper" style="background-color: #D1FAE5; color: #059669;">K</div>
+                    <div class="card-content">
+                        <div class="card-title">Kofi Asante <i class="ph-fill ph-star rating-star"></i> 4.9</div>
+                        <div class="card-subtitle">Pickup Truck - 1 Ton, ETA: 18min</div>
+                    </div>
+                    <div class="card-price price-green">GHS 180</div>
+                </div>
+
+                <div class="card-item" onclick="openDriverModal('Yaw Boateng')">
+                    <div class="avatar-wrapper" style="background-color: #ECFCCB; color: #65A30D;">Y</div>
+                    <div class="card-content">
+                        <div class="card-title">Yaw Boateng <i class="ph-fill ph-star rating-star"></i> 4.7</div>
+                        <div class="card-subtitle">Cargo Van - 800kg, ETA: 25min</div>
+                    </div>
+                    <div class="card-price price-green">GHS 160</div>
+                </div>
+
+                <div class="card-item" onclick="openDriverModal('Abena Sarpong')">
+                    <div class="avatar-wrapper" style="background-color: #CCFBF1; color: #0D9488;">A</div>
+                    <div class="card-content">
+                        <div class="card-title">Abena Sarpong <i class="ph-fill ph-star rating-star"></i> 5.0</div>
+                        <div class="card-subtitle">Refrigerated Van, ETA: 32min</div>
+                    </div>
+                    <div class="card-price price-green">GHS 220</div>
+                </div>
+
+                <div class="card-item" onclick="openDriverModal('Ibrahim Mohammed')">
+                    <div class="avatar-wrapper" style="background-color: #CCFBF1; color: #0ba780;">I</div>
+                    <div class="card-content">
+                        <div class="card-title">Ibrahim Mohammed <i class="ph-fill ph-star rating-star"></i> 4.6</div>
+                        <div class="card-subtitle">Flatbed Truck - 2 Tons, ETA: 45min</div>
+                    </div>
+                    <div class="card-price price-green">GHS 250</div>
+                </div>
+
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="farmer-dashboard.html" class="nav-item"><i class="ph ph-house"></i>Home</a>
+            <a href="farmer-orders.html" class="nav-item active"><i class="ph ph-shopping-bag"></i>Orders</a>
+            <a href="farmer-chat.html" class="nav-item"><i class="ph ph-chat-circle"></i>Chat</a>
+            <a href="farmer-profile.html" class="nav-item"><i class="ph ph-user"></i>Profile</a>
+        </nav>
+
+        <div id="driverModal" class="modal-backdrop hidden-overlay">
+            <div class="modal-card">
+                <i class="ph ph-question modal-icon"></i>
+                <h2 id="modalDriverName" class="modal-title">Confirm Kofi Asante?</h2>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel-outline" onclick="closeDriverModal()">Cancel</button>
+                    <button type="button" class="btn-primary-action" onclick="confirmSelection()">Yes</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../scripts/get-transport.js"></script>
+</body>
+</html>

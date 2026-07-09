@@ -1,5 +1,5 @@
 :root {
-    --primary-green: #147A42;
+    --primary-green: #14AE5C;
     --primary-hover: #106335;
     --bg-main: #FAFCFB;
     --text-dark: #1A1A1A;
@@ -270,3 +270,107 @@ body {
     .sidebar-brand img {
         height: 80px;
     }
+
+    /* ==========================================================================
+   MODAL SPECIFIC STYLES (farmer-orders)
+   ========================================================================== */
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2000;
+    transition: opacity 0.2s ease;
+}
+
+.hidden-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-card {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111827;
+}
+
+/* Icon Styles */
+.modal-icon-dark {
+    font-size: 4rem;
+    color: #4B5563; /* Dark grey for the question mark */
+    margin-bottom: 16px;
+}
+
+.modal-icon-success {
+    width: 72px;
+    height: 72px;
+    background-color: #DCFCE7; /* Light green bg */
+    color: #10B981; /* Primary green check */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 20px auto;
+}
+
+.modal-icon-error {
+    width: 72px;
+    height: 72px;
+    background-color: transparent;
+    color: #DC2626; /* Red X */
+    border: 3px solid #DC2626; /* Red border ring */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 20px auto;
+}
+
+/* Button Layouts & Colors */
+.modal-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btn-solid-green {
+    background-color: #14AE5C;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-outline-red {
+    background: transparent;
+    color: #DC2626;
+    border: 1px solid #DC2626;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.full-width {
+    width: 100%;
+}

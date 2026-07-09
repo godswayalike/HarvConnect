@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
             // Map the actions to their respective behaviors
             switch(action) {
                 case 'order-history':
-                    window.location.href = 'orders.html';
+                    window.location.href = 'farmer-orders.html';
                     break;
                 case 'notifications':
-                    alert('Opening Notifications Panel...');
+                    window.location.href = 'farmer-notification.html';
                     break;
                 case 'settings':
-                    alert('Opening Settings Configuration...');
+                    window.location.href = 'farmer-editprofile.html';
                     break;
                 case 'support':
-                    alert('Redirecting to Help Center...');
+                    window.location.href = 'farmer-help.html';
                     break;
                 default:
                     console.log('Action not mapped');

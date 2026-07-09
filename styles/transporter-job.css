@@ -85,7 +85,7 @@
 /* --- Buttons Controllers --- */
 .btn-action-primary {
     width: 100%;
-    background-color: #10B981;
+    background-color: #14AE5C;
     color: var(--bg-pure-white);
     border: none;
     padding: 14px;
@@ -200,7 +200,7 @@
 }
 
 .btn-modal-confirm, .btn-modal-goback {
-    background-color: #10B981;
+    background-color: #14AE5C;
     color: white;
     border: none;
     padding: 14px;

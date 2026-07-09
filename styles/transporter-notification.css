@@ -2,7 +2,7 @@
    CORE COLOR VARIABLES & GLOBAL CONFIGURATIONS
    ========================================================================== */
 :root {
-    --primary-green: #10B981;
+    --primary-green: #14AE5C;
     --primary-dark-green: #059669;
     --bg-light-gray: #F9FAFB;
     --bg-pure-white: #FFFFFF;
@@ -32,6 +32,7 @@ body {
 }
 
 .notifications-wrapper {
+    margin-top: 24px;
     background-color: var(--bg-pure-white);
     flex: 1;
 }

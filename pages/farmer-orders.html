@@ -104,6 +104,53 @@
         </main>
     </div>
 
+    <!-- 
+    ==============================================================================
+                                Confirmation Modals
+    ==============================================================================
+    -->
+    <div id="acceptConfirmModal" class="modal-backdrop hidden-overlay">
+    <div class="modal-card">
+        <i class="ph ph-question modal-icon-dark"></i>
+        <h2 class="modal-title">Are you sure you want to accept order?</h2>
+        <div class="modal-actions">
+            <button type="button" class="btn-outline-red" onclick="closeOrderModal('acceptConfirmModal')">No, Go back</button>
+            <button type="button" class="btn-solid-green" onclick="showAcceptSuccess()">Yes, Accept</button>
+        </div>
+    </div>
+</div>
+
+<div id="acceptSuccessModal" class="modal-backdrop hidden-overlay">
+    <div class="modal-card">
+        <div class="modal-icon-success">
+            <i class="ph ph-check"></i>
+        </div>
+        <h2 class="modal-title">Order Accepted!</h2>
+        <button type="button" class="btn-solid-green full-width" onclick="window.location.href='get-transport.html'">Get Transport</button>
+    </div>
+</div>
+
+<div id="declineConfirmModal" class="modal-backdrop hidden-overlay">
+    <div class="modal-card">
+        <i class="ph ph-question modal-icon-dark"></i>
+        <h2 class="modal-title">Are you sure you want to decline order?</h2>
+        <div class="modal-actions">
+            <button type="button" class="btn-outline-red" onclick="showDeclineSuccess()">Yes, decline</button>
+            <button type="button" class="btn-solid-green" onclick="closeOrderModal('declineConfirmModal')">No, Go back</button>
+        </div>
+    </div>
+</div>
+
+<div id="declineSuccessModal" class="modal-backdrop hidden-overlay">
+    <div class="modal-card">
+        <div class="modal-icon-error">
+            <i class="ph ph-x"></i>
+        </div>
+        <h2 class="modal-title">Order Declined!</h2>
+        <button type="button" class="btn-solid-green full-width" onclick="closeOrderModal('declineSuccessModal')">Go back</button>
+    </div>
+</div>
+
     <script src="../scripts/farmer-orders.js"></script>
 </body>
 </html>
