@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Notifications</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../styles/transporter-notification.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="transporter-dashboard.html" class="sidebar-link"><i class="ph ph-house"></i> Home</a>
+                <a href="transporter-job.html" class="sidebar-link"><i class="ph ph-briefcase"></i> Jobs</a>
+                <a href="transporter-chat.html" class="sidebar-link"><i class="ph ph-chat-circle"></i> Chat</a>
+                <a href="transporter-profile.html" class="sidebar-link active"><i class="ph ph-user"></i> Profile</a>
+            </nav>
+        </aside>
+
+        <main class="main-content notifications-wrapper">
+            
+            <header class="page-top-header">
+                <a href="transporter-profile.html" class="btn-back" aria-label="Go back">
+                    <i class="ph ph-caret-left"></i>
+                </a>
+                <h1 class="header-title">Notifications</h1>
+            </header>
+
+            <div class="content-body no-padding-top">
+                <div class="notifications-list">
+                    
+                    <div class="notif-item unread" onclick="openNotification(this)">
+                        <div class="notif-icon bg-light-green">
+                            <i class="ph ph-package"></i>
+                        </div>
+                        <div class="notif-details">
+                            <div class="notif-title-row">
+                                <h4 class="notif-title">New delivery request</h4>
+                                <span class="unread-badge">1</span>
+                            </div>
+                            <p class="notif-desc">Kumasi, Accra - GHS 180 - Tom...</p>
+                            <p class="notif-full-text">New delivery request available! Route: Kumasi Farm to Accra Center Market. Price: GHS 180. Cargo: 5 crates of Fresh Tomatoes. Head over to your jobs tab to accept this assignment immediately.</p>
+                        </div>
+                        <div class="notif-time">5m ago</div>
+                    </div>
+
+                    <div class="notif-item unread" onclick="openNotification(this)">
+                        <div class="notif-icon bg-light-green">
+                            <i class="ph ph-chat-circle"></i>
+                        </div>
+                        <div class="notif-details">
+                            <div class="notif-title-row">
+                                <h4 class="notif-title">New message</h4>
+                                <span class="unread-badge">3</span>
+                            </div>
+                            <p class="notif-desc">Mama Efua Foods has sent you a...</p>
+                            <p class="notif-full-text">Mama Efua Foods has sent you a new message: "Hello, please let me know when you depart from the Techiman hub. The market women are waiting for the green peppers and need an updated ETA."</p>
+                        </div>
+                        <div class="notif-time">1h ago</div>
+                    </div>
+
+                    <div class="notif-item" onclick="openNotification(this)">
+                        <div class="notif-icon bg-light-green">
+                            <i class="ph ph-wallet"></i>
+                        </div>
+                        <div class="notif-details">
+                            <div class="notif-title-row">
+                                <h4 class="notif-title">Payment received</h4>
+                            </div>
+                            <p class="notif-desc">GHS 60 credited for Techiman...</p>
+                            <p class="notif-full-text">Payment secured successfully. GHS 60 has been credited to your digital wallet for your completed delivery route from Techiman to Sunyani. Thank you for your seamless delivery service!</p>
+                        </div>
+                        <div class="notif-time">2h ago</div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <nav class="mobile-nav">
+            <a href="transporter-dashboard.html" class="mobile-nav-link">
+                <i class="ph ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="jobs.html" class="mobile-nav-link">
+                <i class="ph ph-briefcase"></i>
+                <span>Jobs</span>
+            </a>
+            <a href="#" class="mobile-nav-link">
+                <i class="ph ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="profile.html" class="mobile-nav-link active">
+                <i class="ph ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <div id="notificationModal" class="modal-backdrop hidden-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div id="modalIconContainer" class="modal-icon-circle">
+                    <i id="modalIcon" class="ph ph-bell"></i>
+                </div>
+                <div class="modal-meta-info">
+                    <h3 id="modalTitle">Notification Title</h3>
+                    <span id="modalTime">Just now</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalBodyText">Detailed contents of the notification display here accurately...</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-close" onclick="closeNotification()">Dismiss</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/notification.js"></script>
+</body>
+</html>

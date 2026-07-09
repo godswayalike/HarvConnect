@@ -1,0 +1,279 @@
+:root {
+    --primary-green: #10B981;
+    --primary-dark-green: #059669;
+    --destructive-red: #DC2626;
+    --border-gray: #E5E7EB;
+    --text-main: #111827;
+    --text-sub: #4B5563;
+    --text-disabled: #9CA3AF;
+    --bg-canvas: #FAFAF9;
+    --bg-card: #FFFFFF;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #F3F4F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+/* --- Fixed High-Fidelity Mobile Simulation Container --- */
+.mobile-viewport-container {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    max-height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- App Toolbar Header Configuration --- */
+.app-header {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.btn-back-arrow {
+    font-size: 1.75rem;
+    color: var(--text-main);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+    cursor: pointer;
+}
+
+.page-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* --- Layout Body Context Scroll Core --- */
+.form-container {
+    flex: 1;
+    overflow-y: visible;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Input Grouping Component Implementations --- */
+.input-field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-field-group label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.input-field-group input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    color: var(--text-main);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-gray);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.input-field-group input:focus {
+    border-color: var(--primary-green);
+}
+
+.input-field-group input::placeholder {
+    color: var(--text-disabled);
+}
+
+.validation-hint-text {
+    font-size: 0.75rem;
+    color: var(--text-sub);
+    margin-top: 4px;
+    padding-left: 2px;
+}
+
+/* --- Inline Password Hide-Reveal Modules --- */
+.password-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-wrapper input {
+    padding-right: 48px;
+}
+
+.btn-toggle-reveal {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--text-sub);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Button Mechanics Hierarchy --- */
+.btn-primary-action {
+    width: 100%;
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    text-align: center;
+}
+
+.btn-primary-action:hover {
+    background-color: var(--primary-dark-green);
+}
+
+.standard-margin-top {
+    margin-top: 12px;
+}
+
+/* --- Password Segment Link Node Placement --- */
+.password-routing-box {
+    margin-top: auto;
+    padding-top: 32px;
+}
+
+.routing-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   MODAL LAYER GRAPHICAL USER INTERFACE SYSTEM
+   ========================================================================== */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2000;
+    transition: opacity 0.2s ease;
+}
+
+.modal-card {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 380px;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    transform: scale(1);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- Form Dialogue Version Specifics --- */
+.dialog-box {
+    padding: 24px;
+}
+
+.modal-action-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-secondary-cancel {
+    background-color: var(--bg-card);
+    color: var(--destructive-red);
+    border: 1px solid #FCA5A5;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    text-align: center;
+}
+
+.btn-secondary-cancel:hover {
+    background-color: #FEF2F2;
+}
+
+/* --- Success Frame Verification Architecture --- */
+.status-feedback-box {
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.success-icon-circle {
+    width: 64px;
+    height: 64px;
+    background-color: #DCFCE7;
+    color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    margin-bottom: 20px;
+}
+
+.success-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* --- Structural Visibility Toggles --- */
+.hidden-overlay {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.hidden-overlay .modal-card {
+    transform: scale(0.92);
+}

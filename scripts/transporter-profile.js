@@ -8,17 +8,17 @@ document.addEventListener("DOMContentLoaded", () => {
             
             // Map the actions to their respective behaviors
             switch(action) {
-                case 'order-history':
-                    window.location.href = 'orders.html';
+                case 'job-history':
+                    window.location.href = 'transporter-job.html';
                     break;
                 case 'notifications':
-                    alert('Opening Notifications Panel...');
+                    window.location.href = 'transporter-notification.html';
                     break;
-                case 'settings':
-                    alert('Opening Settings Configuration...');
+                case 'edit-profile':
+                    window.location.href = 'transporter-editprofile.html';
                     break;
                 case 'support':
-                    alert('Redirecting to Help Center...');
+                    window.location.href = 'transporter-help.html';
                     break;
                 default:
                     console.log('Action not mapped');
