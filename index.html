@@ -1,92 +1,388 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HarvConnect - Welcome</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Phosphor Icons for clean, lightweight UI icons -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Home</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  </head>
-  <body>
-    <!-- Splash Screen -->
-    <div id="splash-screen" class="screen active">
-      <div class="splash-content">
-        <!-- HarvConnect Logo -->
-        <img
-          src="images/HarvConnect-logo.png"
-          alt="HarvConnect Logo"
-          class="logo-large"
-        />
-      </div>
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="./images/HarvConnect-logo.png" alt="HarvConnect Logo" class="brand-logo" onerror="this.style.display='none'">
+                <!--<span class="brand-name"><span class="accent-green">Harv</span>connect</span> -->
+            </div>
+            <nav class="desktop-nav">
+                <a href="#problem">The Problem</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#roles">Our Solutions</a>
+                <a href="#marketplace">Marketplace</a>
+                <a href="#farmers">Farmers</a>
+                <a href="#support">Support</a>
+            </nav>
+            <div class="cta-group">
+                <a href="./pages/signup.html" class="btn-nav-get-started">Get Started</a>
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-menu" id="mobileMenu">
+        <a href="#problem" class="mobile-link">The Problem</a>
+        <a href="#how-it-works" class="mobile-link">How It Works</a>
+        <a href="#roles" class="mobile-link">Our Solutions</a>
+        <a href="#marketplace" class="mobile-link">Marketplace</a>
+        <a href="#farmers" class="mobile-link">Farmers</a>
+        <a href="#support" class="mobile-link">Support</a>
+        <a href="./pages/signup.html" class="mobile-link highlight">Get Started</a>
     </div>
 
-    <!-- Role Selection Screen -->
-    <div id="role-selection-screen" class="screen">
-      <div class="container">
-        <header>
-          <img
-            src="images/HarvConnect-logo.png"
-            alt="HarvConnect Logo"
-            class="logo-small"
-          />
-        </header>
-
-        <main>
-          <h1 class="page-title">Create your account</h1>
-          <p class="page-subtitle">Choose what role best describes you</p>
-
-          <div class="role-options">
-            <!-- Farmer Role -->
-            <div class="role-card" data-role="Farmer">
-              <div class="icon-wrapper">
-                <i class="ph ph-plant"></i>
-              </div>
-              <div class="role-info">
-                <a href="pages/farmer-signup.html"
-                  ><h2>Farmer</h2>
-                  <p>List and sell your produce</p></a
-                >
-              </div>
-            </div>
-
-            <!-- Buyer Role -->
-            <div class="role-card" data-role="Buyer">
-              <div class="icon-wrapper">
-                <i class="ph ph-basket"></i>
-              </div>
-              <div class="role-info">
-                <a href="pages/buyer-signup.html">
-                  <h2>Buyer</h2>
-                  <p>Discover and purchase fresh products</p>
-                </a>
-              </div>
-            </div>
-
-            <!-- Transport Provider Role -->
-            <div class="role-card" data-role="Transport">
-              <div class="icon-wrapper">
-                <i class="ph ph-truck"></i>
-              </div>
-              <div class="role-info">
-                <a href="pages/transporter-signup.html">
-                  <h2>Transport Provider</h2>
-                  <p>Deliver produce and earn</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="login-prompt">
-            <p>
-              Already have an account?
-              <a href="../pages/login.html" id="login-link">Log In</a>
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content-container">
+            <h1 class="hero-headline">Fresh from the Farm.<br>Direct to Buyers.</h1>
+            <p class="hero-subtext">
+                Harvconnect links Ghana's small & large-scale vegetable farmers directly to buyers, enabling efficient coordination of transport and delivery
             </p>
-          </div>
-        </main>
-      </div>
+            <div class="hero-action-buttons">
+                <a href="./pages/signup.html" class="btn-hero-primary">Enroll for Free <i class="ph ph-arrow-right"></i></a>
+                <a href="#how-it-works" class="btn-hero-secondary">See how it works</a>
+            </div>
+        </div>
+    </section>
+
+    <!--The Problem Section-->
+    <section id="problem" class="problem-section">
+        <div class="section-container">
+            <span class="section-tagline">THE PROBLEM</span>
+            <h2 class="section-title">Ghana loses up to <span class="text-danger">$3B</span> in produce every year</h2>
+            <p class="section-desc">Fragmentation, spoilage, and opaque pricing cost every participant in the vegetable supply chain. Harvconnect replaces that with coordination, fair prices, and direct trade.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>For Farmers</h3>
+                    <ul>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Forced to sell through exploitative middlemen</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> No way to reach buyers outside their local market</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> 30-50% of all harvest lost to spoilage</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Price volatility drops fair market prices</li>
+                    </ul>
+                </div>
+                <div class="problem-card">
+                    <h3>For Buyers</h3>
+                    <ul>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Struggle to find reliable, consistent supply</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> High effort to source quality produce</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Opaque pricing - no benchmarks by region</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Logistics failures to coordinate delivery</li>
+                    </ul>
+                </div>
+                <div class="problem-card">
+                    <h3>For Transport Providers</h3>
+                    <ul>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Fragmented load-matching pattern</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Poor coordination causes delays and spoilage</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Empty return trips waste up to 50% of revenue</li>
+                        <li><i class="ph ph-x-circle icon-danger"></i> Irregular load demand from informal brokers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--How It Works Section-->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="section-container">
+            <span class="section-tagline">HOW IT WORKS</span>
+            <h2 class="section-title">From farm to buyers in 4 steps</h2>
+            <p class="section-desc">Harvconnect replaces fragmented informal trade with a coordinated, transparent process that creates value for farmers, buyers, and transport providers alike.</p>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                    </div>
+                    <div class="step-body">
+                        <h3>Farmers lists produce</h3>
+                        <p>Farmers upload verified listings - produce name, photo, quantity, units, price and product details.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                    </div>
+                    <div class="step-body">
+                        <h3>Buyers discovers supply</h3>
+                        <p>Buyers search or filter listings by the kind of produce, price, quality metrics, and region.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                    </div>
+                    <div class="step-body">
+                        <h3>Order & negotiate</h3>
+                        <p>Buyers send inquiries or place orders. Chats and management occur directly through the app ecosystem.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">04</span>
+                    </div>
+                    <div class="step-body">
+                        <h3>Transport & deliver</h3>
+                        <p>Nearby transport providers are matched to open jobs. Track deliveries live until safe dropoff points.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Solution Section-->
+    <section id="roles" class="roles-section">
+        <div class="section-container">
+            <span class="section-tagline">BUILT FOR EVERYONE</span>
+            <h2 class="section-title">One Platform, Three Roles</h2>
+            <p class="section-desc">Whether you grow, buy, or move agricultural goods—Harvconnect is built for you.</p>
+
+            <div class="roles-grid">
+                <div class="role-action-card">
+                    <div class="role-icon-box"><i class="ph ph-plant"></i></div>
+                    <h3>For Farmers</h3>
+                    <p class="role-pitch">List your vegetables and connect directly with serious buyers across Ghana — no exploitative middlemen.</p>
+                    <ul class="role-checks">
+                        <li><i class="ph ph-check-circle icon-success"></i> Direct access to verified buyers</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Fair, transparent price discovery</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Cut post-harvest cargo losses</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Request transport in one tap</li>
+                    </ul>
+                    <a href="pages/farmer-signup.html" class="btn-role-onboard">Join as a Farmer <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <div class="role-action-card">
+                    <div class="role-icon-box"><i class="ph ph-basket"></i></div>
+                    <h3>For Buyers</h3>
+                    <p class="role-pitch">Source fresh vegetables from a verified network of smallholders — consistent quality, transparent pricing, coordinated delivery.</p>
+                    <ul class="role-checks">
+                        <li><i class="ph ph-check-circle icon-success"></i> Search by produce, price and region</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Direct open negotiations</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> See structural market rates</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Track delivery end-to-end</li>
+                    </ul>
+                    <a href="pages/buyer-signup.html" class="btn-role-onboard">Join as a Buyer <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <div class="role-action-card">
+                    <div class="role-icon-box"><i class="ph ph-truck"></i></div>
+                    <h3>For Transport provider</h3>
+                    <p class="role-pitch">Register your fleet, get matched with loads and delivery jobs — reduce empty return trips, grow your steady business revenue.</p>
+                    <ul class="role-checks">
+                        <li><i class="ph ph-check-circle icon-success"></i> Direct access to verified jobs</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Fair, transparent route payment</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Optimized matching timelines</li>
+                        <li><i class="ph ph-check-circle icon-success"></i> Maximize daily fleet utilization</li>
+                    </ul>
+                    <a href="pages/transporter-signup.html" class="btn-role-onboard">Join as a Transporter <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Live Marketplace Section -->
+<section id="marketplace" class="live-marketplace-section">
+    <div class="section-container-new">
+        <span class="tagline-green-new">LIVE MARKETPLACE</span>
+        <h2 class="title-dark-new">Browse availabe produce</h2>
+        <p class="desc-dark-new">Verify listings from farmers and cooperatives across Ghana - filter by produce, location, and price</p>
+        
+        <div class="produce-grid-new">
+            <!-- Card 1 -->
+            <div class="produce-card-new">
+                <div class="produce-img-placeholder-new">
+                    <img src="./images/Fresh Tomatoes.png" alt="Fresh Tomatoes" class="produce-img">
+                </div>
+                <div class="produce-info-new">
+                    <h3>Fresh Tomatoes</h3>
+                    <p class="author-new">by Akosua Asante</p>
+                    <p class="price-new">GHS 20/kg</p>
+                    <p class="location-new"><i class="ph ph-map-pin"></i> Accra</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="produce-card-new">
+                <div class="produce-img-placeholder-new">
+                    <img src="./images/Fresh pepper.png" alt="Fresh pepper" class="produce-img">
+                </div>
+                <div class="produce-info-new">
+                    <h3>Fresh pepper</h3>
+                    <p class="author-new">by Kofi Mensah</p>
+                    <p class="price-new">GHS 25/kg</p>
+                    <p class="location-new"><i class="ph ph-map-pin"></i> Northern Region</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="produce-card-new">
+                <div class="image">
+                    <img src="./images/Onions-1.png" alt="Onions" class="produce-img">
+                </div>
+                <div class="produce-info-new">
+                    <h3>Onions</h3>
+                    <p class="author-new">by Asare Osei</p>
+                    <p class="price-new">GHS 10/kg</p>
+                    <p class="location-new"><i class="ph ph-map-pin"></i> Ashanti Region</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="produce-card-new">
+                <div class="produce-img-placeholder-new">
+                    <img src="./images/Lettuce.png" alt="Letuce" class="produce-img">
+                </div>
+                <div class="produce-info-new">
+                    <h3>Letuce</h3>
+                    <p class="author-new">by Sunday John</p>
+                    <p class="price-new">GHS 30/kg</p>
+                    <p class="location-new"><i class="ph ph-map-pin"></i> Eastern Region</p>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+<!-- From Our Farmers Testimonials Section -->
+<section id="farmers" class="from-farmers-section">
+    <div class="section-container-new">
+        <span class="tagline-gold-new">FROM OUR FARMERS</span>
+        <h2 class="title-white-new">Real Farmers, Real Results</h2>
+        <p class="desc-white-new">Farmers across Ghana are earning more by trading directly on Harvconnect.</p>
+        
+        <div class="testimonials-stack-new">
+            <!-- Review Card 1 -->
+            <div class="farmer-review-card-new">
+                <div class="review-stars-new">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                </div>
+                <p class="review-text-new">“I listed 400kg of tomatoes on Harvconnect and had four buyer inquiries within days. No more selling to middlemen at half price.”</p>
+                <div class="farmer-profile-new">
+                    <div class="farmer-avatar-new color-a">MJ</div>
+                    <div class="farmer-meta-new">
+                        <h4>Mensah John</h4>
+                        <span>Tomato farmer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="farmer-review-card-new">
+                <div class="review-stars-new">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                </div>
+                <p class="review-text-new">“Booking the truck use to take longer than growing the okra. Now it's arranged before harvest is even finished”</p>
+                <div class="farmer-profile-new">
+                    <div class="farmer-avatar-new color-b">AA</div>
+                    <div class="farmer-meta-new">
+                        <h4>Akosua Asante</h4>
+                        <span>Tomato farmer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Active Helpline Support Section -->
+<section id="support" class="active-helpline-section">
+    <div class="section-container-new">
+        <span class="tagline-green-new">ACTIVE HELPLINE</span>
+        <h2 class="title-dark-new">We’re here to help</h2>
+        <p class="desc-dark-new">Our team supports farmers, buyers, and transport providers. Reach us through any channel below.</p>
+        
+        <div class="helpline-stack-new">
+            <!-- Channel 1: Email -->
+            <div class="helpline-card-new">
+                <div class="helpline-icon-wrap-new"><i class="ph ph-envelope"></i></div>
+                <div class="helpline-details-new">
+                    <h3>Email Support</h3>
+                    <p class="helpline-sub-text">Replies within 4 hours</p>
+                    <a href="mailto:sadiqadebimpem@gmail.com" class="helpline-link-new">sadiqadebimpem@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Channel 2: WhatsApp -->
+            <div class="helpline-card-new">
+                <div class="helpline-icon-wrap-new"><i class="ph ph-whatsapp-logo"></i></div>
+                <div class="helpline-details-new">
+                    <h3>WhatsApp Support</h3>
+                    <p class="helpline-sub-text">Chat with our team</p>
+                    <a href="https://wa.me/09076856175" target="_blank" class="helpline-link-new">0907 685 6175</a>
+                </div>
+            </div>
+
+            <!-- Channel 3: Telephone -->
+            <div class="helpline-card-new">
+                <div class="helpline-icon-wrap-new"><i class="ph ph-phone"></i></div>
+                <div class="helpline-details-new">
+                    <h3>Contact Us Through Phone</h3>
+                    <p class="helpline-sub-text">Always available to pick your calls</p>
+                    <a href="tel:09152859357" class="helpline-link-new">0915 285 9357</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Site Map Footer Section -->
+<footer id="contact" class="detailed-footer-new">
+    <div class="footer-grid-container-new">
+        <div class="footer-identity-column-new">
+            <div class="footer-logo-wrap-new">
+                <span class="logo-main-text-new">Harv<span>c</span>onnect</span>
+            </div>
+            <p class="footer-tagline-desc-new">A farmer-to-buyer digital market place connecting Ghana’s vegetable supply chain – built for the Ghana data science challenge.</p>
+        </div>
+        
+        <div class="footer-links-column-new">
+            <h3>PLATFORM</h3>
+            <ul>
+                <li><a href="#marketplace">Marketplace</a></li>
+                <li><a href="#how-it-works">How it works</a></li>
+                <li><a href="#roles">Who it's for</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-links-column-new">
+            <h3>CONTACT</h3>
+            <ul>
+                <li>sadiqadebimpem@gmail.com</li>
+                <li>0915 285 9357</li>
+                <li>Accra, Ghana</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom-bar-new">
+        <p>@2026 Harvconnect | All rights reserved</p>
+    </div>
+</footer>
 
     <script src="script.js"></script>
-  </body>
+    <script>
+        const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav-menu a.mobile-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
 </html>
