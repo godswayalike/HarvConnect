@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const navLinks = Array.from(document.querySelectorAll('.desktop-nav a'));
-    const sections = ['problem', 'how-it-works', 'roles'];
+    const sections = ['problem', 'how-it-works', 'roles', 'marketplace', 'farmers', 'support'];
 
     const setActiveNavLink = () => {
         const scrollPosition = window.scrollY + 120;
@@ -45,3 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     setActiveNavLink();
     window.addEventListener('scroll', setActiveNavLink, { passive: true });
 });
+
+const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav-menu a.mobile-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
