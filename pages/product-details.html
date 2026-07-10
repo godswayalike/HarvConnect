@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | HarvConnect</title>
+    <link rel="stylesheet" href="../styles/buyer-shared.css" />
+    <link rel="stylesheet" href="../styles/buyer-dashboard.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar" role="navigation" aria-label="Buyer navigation">
+        <div class="brand-block">
+          <img
+            src="../images/HarvConnect-logo.png"
+            alt="HarvConnect Logo"
+            class="brand-logo"
+          />
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="buyer-dashboard.html" class="nav-link" data-page="dashboard">
+            <i class="ph ph-squares-four"></i>
+            <span>Marketplace</span>
+          </a>
+          <a href="buyer-search.html" class="nav-link" data-page="search">
+            <i class="ph ph-magnifying-glass"></i>
+            <span>Search</span>
+          </a>
+          <a href="buyer-orders.html" class="nav-link" data-page="orders">
+            <i class="ph ph-shopping-cart"></i>
+            <span>My Orders</span>
+            <span class="cart-badge" style="display: none;">0</span>
+          </a>
+          <a href="buyer-chat.html" class="nav-link" data-page="chat">
+            <i class="ph ph-chat-circle-dots"></i>
+            <span>Messages</span>
+          </a>
+          <a href="buyer-profile.html" class="nav-link" data-page="profile">
+            <i class="ph ph-user"></i>
+            <span>Profile</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button type="button" id="logoutBtn" class="logout-link">
+            <i class="ph ph-sign-out"></i>
+            <span>Logout</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+          <div class="search-container">
+            <div class="search-bar">
+              <i class="ph ph-magnifying-glass"></i>
+              <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search for fresh produce..." 
+                aria-label="Search products"
+              />
+            </div>
+          </div>
+          
+          <div class="profile-pill">
+            <div class="notification-bell" id="notificationBell" role="button" aria-label="Notifications">
+              <i class="ph ph-bell"></i>
+            </div>
+            <div class="avatar" id="userInitials">B</div>
+          </div>
+        </header>
+
+        <!-- Content Area -->
+        <section class="content-area" id="productDetails">
+          <!-- Product details will be rendered here -->
+        </section>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/api.js"></script>
+    <script src="../scripts/buyer-shared.js"></script>
+    <script src="../scripts/product-details.js"></script>
+  </body>
+</html>
