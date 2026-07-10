@@ -1,0 +1,476 @@
+/* --- Core Configurations & Variables --- */
+:root {
+    --primary-green: #14AE5C;
+    --primary-dark-green: #059669;
+    --bg-light-gray: #F9FAFB;
+    --bg-pure-white: #FFFFFF;
+    --text-dark: #111827;
+    --text-muted: #6B7280;
+    
+    /* System Colors matched with component states */
+    --icon-green-bg: #E6F4EA;
+    --icon-amber-bg: #FEF3C7;
+    --icon-amber-fg: #D97706;
+    --icon-purple-bg: #F3E8FF;
+    --icon-purple-fg: #7C3AED;
+    
+    --border-soft: #F3F4F6;
+    --font-stack: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-stack);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-light-gray);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Layout Structure: Main Content Frame --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px; /* Leave breathing space for mobile floating nav alignment */
+}
+
+/* --- UI Component: App Header Block --- */
+.dashboard-header {
+    background-color: var(--primary-green);
+    color: var(--bg-pure-white);
+    padding: 24px 20px 32px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    flex: 1 1 auto;
+    height: 150px;
+    min-width: 0;
+}
+
+.welcome-text {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.user-name {
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.location-badge i {
+    font-size: 1rem;
+}
+
+.notification-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: background 0.2s;
+}
+
+.notification-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Internal Layout Framework --- */
+.content-body {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+}
+
+/* --- Content Component: Stat Overview Metric Cards --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.stat-card {
+    background-color: var(--bg-pure-white);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.stat-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.earnings-icon { background-color: var(--icon-green-bg); color: var(--primary-green); }
+.trips-icon { background-color: var(--icon-amber-bg); color: var(--icon-amber-fg); }
+.monthly-icon { background-color: var(--icon-purple-bg); color: var(--icon-purple-fg); }
+
+.stat-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* --- Content Component: Request System Pipeline --- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.section-header .section-title {
+    margin-bottom: 0;
+}
+
+.view-all-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.request-card {
+    background-color: var(--bg-pure-white);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.request-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.request-card-header {
+    flex-wrap: wrap;
+}
+
+.produce-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.price-distance-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 0 0 auto;
+    margin-left: 12px;
+}
+
+.produce-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    flex: 1;
+}
+
+.price-distance-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.request-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.request-distance {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1px;
+}
+
+.request-route {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 14px 0 18px 0;
+}
+
+.route-icon {
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    margin-top: 2px;
+}
+
+.route-details {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.btn-accept {
+    width: 100%;
+    background-color: var(--primary-green);
+    color: var(--bg-pure-white);
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-accept:hover {
+    background-color: var(--primary-dark-green);
+}
+
+/* --- Mobile Bottom Tab Nav Architecture --- */
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: var(--bg-pure-white);
+    border-top: 1px solid var(--border-soft);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+.mobile-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+.mobile-nav-link i {
+    font-size: 1.35rem;
+}
+
+.mobile-nav-link.active {
+    color: var(--primary-green);
+}
+
+/* Default state layouts for responsive tracking */
+.sidebar {
+    display: none;
+}
+
+/* --- Feedback Popups --- */
+#toast {
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.toast-hidden { opacity: 0; visibility: hidden; }
+.toast-visible { opacity: 1; visibility: visible; }
+
+
+/* --- TABLETS / MEDIUM VIEWPORTS (min-width: 600px) --- */
+@media (min-width: 480px) {
+    .content-body {
+        padding: 28px 24px;
+    }
+     .dashboard-header {
+        height: 150px;
+     }
+    .stats-grid {
+        /* let cards reflow responsively on medium screens */
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+    }
+    
+    .requests-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* Narrow desktops / larger tablets: slightly reduce header height without affecting small or large breakpoints */
+@media (min-width: 480px) and (max-width: 1023px) {
+    .dashboard-header {
+        height: 150px;
+        padding: 14px 20px 16px 20px;
+    }
+    .user-name {
+        font-size: 1.35rem;
+    }
+    .notification-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+}
+
+/* --- DESKTOPS / LARGE SCREEN INTERFACES (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+    .main-content {
+        padding-bottom: 0; /* Remove padding when mobile navigation overlay is disabled */
+    }
+
+    /* Switch on full layout Sidebar Navigation engine */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+        background-color: var(--bg-pure-white);
+        border-right: 1px solid var(--border-soft);
+        padding: 24px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+
+    .sidebar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--primary-green);
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-bottom: 36px;
+    }
+
+    .sidebar-brand img {
+        height: 80px;
+    }
+    .sidebar-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .sidebar-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.2s;
+    }
+
+    .sidebar-link i {
+        font-size: 1.3rem;
+    }
+
+    .sidebar-link:hover, .sidebar-link.active {
+        background-color: var(--icon-green-bg);
+        color: var(--primary-dark-green);
+    }
+
+    /* Turn off mobile navbar overlay */
+    .mobile-nav {
+        display: none;
+    }
+
+    /* Rescale top header design configuration elements */
+    .dashboard-header {
+        padding: 32px 10px;
+        height: 150px;
+        border-radius: 0; /* Header spans flat across top grid columns */
+    }
+
+    .content-body {
+        padding: 40px;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .requests-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    #toast {
+        bottom: 40px;
+    }
+}

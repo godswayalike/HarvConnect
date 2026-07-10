@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Farmer Dashboard</title>
+    <link rel="stylesheet" href="../styles/farmer-dashboard.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="main-nav">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            
+            <a href="../pages/farmer-dashboard.html" class="nav-item active">
+                <i class="ph-fill ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="farmer-orders.html" class="nav-item">
+                <i class="ph ph-shopping-bag"></i>
+                <span>Orders</span>
+            </a>
+            <a href="farmer-chat.html" class="nav-item">
+                <i class="ph ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="farmer-profile.html" class="nav-item">
+                <i class="ph ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="dashboard-header">
+                <div class="header-top">
+                    <div class="user-info">
+                        <p class="greeting">Welcome back,</p>
+                        <h1 class="user-name" id="userNameDisplay">Mensah John</h1>
+                        <div class="location-dropdown">
+                            <i class="ph-fill ph-map-pin"></i>
+                            <span>Akuapem North, Eastern Region</span>
+                            <i class="ph ph-caret-down"></i>
+                        </div>
+                    </div>
+                    <button class="notification-btn" aria-label="Notifications">
+                        <i class="ph ph-bell"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="action-card-wrapper">
+                <div class="action-card">
+                    <button class="action-btn primary" onclick="window.location.href='add-produce.html'">
+                        <i class="ph ph-plus-circle"></i>
+                        Add Produce
+                    </button>
+                    <button class="action-btn secondary" onclick="window.location.href='get-transport.html'">
+                        <i class="ph ph-truck"></i>
+                        Get Transport
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-body">
+                
+                <section class="overview-section">
+                    <h2 class="section-title">Overview</h2>
+                    <div class="stats-grid">
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper bg-green-light">
+                                <i class="ph ph-wallet text-green"></i>
+                            </div>
+                            <h3 class="stat-value">GHS 12,550</h3>
+                            <p class="stat-label">Earnings</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper bg-blue-light">
+                                <i class="ph ph-package text-blue"></i>
+                            </div>
+                            <h3 class="stat-value" id="activeListingsCount">8</h3>
+                            <p class="stat-label">Active Listings</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper bg-yellow-light">
+                                <i class="ph ph-shopping-bag text-yellow"></i>
+                            </div>
+                            <h3 class="stat-value">3</h3>
+                            <p class="stat-label">Orders</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper bg-purple-light">
+                                <i class="ph ph-trend-up text-purple"></i>
+                            </div>
+                            <h3 class="stat-value">+24%</h3>
+                            <p class="stat-label">This Month</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="recent-orders-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Recent Orders</h2>
+                        <a href="farmer-orders.html" class="view-all-link">View All</a>
+                    </div>
+                    
+                    <div class="order-list">
+                        
+                        <div class="order-item">
+                            <img src="../images/tomatoes.png" alt="Tomatoes" class="order-img">
+                            <div class="order-details">
+                                <h4 class="order-title">Fresh Tomatoes</h4>
+                                <p class="order-subtitle">Accra Fresh Ltd . 15kg</p>
+                            </div>
+                            <div class="order-status-group">
+                                <span class="order-price">GHS 300</span>
+                                <span class="status-badge status-pending">pending</span>
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <img src="../images/tomatoes.png" alt="Tomatoes" class="order-img">
+                            <div class="order-details">
+                                <h4 class="order-title">Fresh Tomatoes</h4>
+                                <p class="order-subtitle">Mama Efua Foods . 20kg</p>
+                            </div>
+                            <div class="order-status-group">
+                                <span class="order-price">GHS 400</span>
+                                <span class="status-badge status-transit">In Transit</span>
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <img src="../images/tomatoes.png" alt="Tomatoes" class="order-img">
+                            <div class="order-details">
+                                <h4 class="order-title">Fresh Tomatoes</h4>
+                                <p class="order-subtitle">Kumasi foods . 50kg</p>
+                            </div>
+                            <div class="order-status-group">
+                                <span class="order-price">GHS 1000</span>
+                                <span class="status-badge status-delivered">Delivered</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                
+            </div>
+            <div class="mobile-bottom-spacer"></div>
+        </main>
+    </div>
+
+    <script src=".../scripts/farmer-dashboard.js"></script>
+</body>
+</html>

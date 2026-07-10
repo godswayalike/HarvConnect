@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - My Orders</title>
+    <link rel="stylesheet" href="../styles/farmer-orders.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="main-nav">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            
+            <a href="farmer-dashboard.html" class="nav-item">
+                <i class="ph ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="farmer-orders.html" class="nav-item active">
+                <i class="ph-fill ph-shopping-bag"></i>
+                <span>Orders</span>
+            </a>
+            <a href="farmer-chat.html" class="nav-item">
+                <i class="ph ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="farmer-profile.html" class="nav-item">
+                <i class="ph ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="page-header">
+                <h1 class="page-title">My Orders</h1>
+            </header>
+
+            <div class="orders-container">
+                
+                <div class="tabs-wrapper">
+                    <button class="tab-btn active" data-filter="all">All</button>
+                    <button class="tab-btn" data-filter="pending">Pending</button>
+                    <button class="tab-btn" data-filter="active">Active</button>
+                    <button class="tab-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <div class="orders-list" id="ordersList">
+                    
+                    <div class="order-card" data-status="pending">
+                        <div class="order-card-content">
+                            <div class="order-info">
+                                <h3 class="product-name">Green Peppers</h3>
+                                <p class="buyer-details">From Accra Fresh Ltd.<br>15 kg</p>
+                            </div>
+                            <div class="order-meta">
+                                <span class="price">GHS 112</span>
+                                <span class="status-label">PENDING</span>
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn btn-outline-red">Decline</button>
+                            <button class="btn btn-fill-green">Accept</button>
+                        </div>
+                    </div>
+
+                    <div class="order-card" data-status="active">
+                        <div class="order-card-content">
+                            <div class="order-info">
+                                <h3 class="product-name">Fresh Tomatoes</h3>
+                                <p class="buyer-details">From Mama Efua Foods<br>20 kg</p>
+                            </div>
+                            <div class="order-meta">
+                                <span class="price">GHS 225</span>
+                                <span class="status-label">IN TRANSIT</span>
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn btn-outline-dark">Track delivery</button>
+                        </div>
+                    </div>
+
+                    <div class="order-card" data-status="completed">
+                        <div class="order-card-content">
+                            <div class="order-info">
+                                <h3 class="product-name">Onions</h3>
+                                <p class="buyer-details">From Kumasi Foods<br>50 kg</p>
+                            </div>
+                            <div class="order-meta">
+                                <span class="price">GHS 200</span>
+                                <span class="status-label">DELIVERED</span>
+                            </div>
+                        </div>
+                        </div>
+
+                </div>
+            </div>
+            
+            <div class="mobile-bottom-spacer"></div>
+        </main>
+    </div>
+
+    <!-- 
+    ==============================================================================
+                                Confirmation Modals
+    ==============================================================================
+    -->
+    <div id="acceptConfirmModal" class="modal-backdrop hidden-overlay">
+    <div class="modal-card">
+        <i class="ph ph-question modal-icon-dark"></i>
+        <h2 class="modal-title">Are you sure you want to accept order?</h2>
+        <div class="modal-actions">
+            <button type="button" class="btn-outline-red" onclick="closeOrderModal('acceptConfirmModal')">No, Go back</button>
+            <button type="button" class="btn-solid-green" onclick="showAcceptSuccess()">Yes, Accept</button>
+        </div>
+    </div>
+</div>
+
+<div id="acceptSuccessModal" class="modal-backdrop hidden-overlay">
+    <div class="modal-card">
+        <div class="modal-icon-success">
+            <i class="ph ph-check"></i>
+        </div>
+        <h2 class="modal-title">Order Accepted!</h2>
+        <button type="button" class="btn-solid-green full-width" onclick="window.location.href='get-transport.html'">Get Transport</button>
+    </div>
+</div>
+
+<div id="declineConfirmModal" class="modal-backdrop hidden-overlay">
+    <div class="modal-card">
+        <i class="ph ph-question modal-icon-dark"></i>
+        <h2 class="modal-title">Are you sure you want to decline order?</h2>
+        <div class="modal-actions">
+            <button type="button" class="btn-outline-red" onclick="showDeclineSuccess()">Yes, decline</button>
+            <button type="button" class="btn-solid-green" onclick="closeOrderModal('declineConfirmModal')">No, Go back</button>
+        </div>
+    </div>
+</div>
+
+<div id="declineSuccessModal" class="modal-backdrop hidden-overlay">
+    <div class="modal-card">
+        <div class="modal-icon-error">
+            <i class="ph ph-x"></i>
+        </div>
+        <h2 class="modal-title">Order Declined!</h2>
+        <button type="button" class="btn-solid-green full-width" onclick="closeOrderModal('declineSuccessModal')">Go back</button>
+    </div>
+</div>
+
+    <script src="../scripts/farmer-orders.js"></script>
+</body>
+</html>

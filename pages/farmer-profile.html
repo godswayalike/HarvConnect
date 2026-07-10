@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - My Profile</title>
+    <link rel="stylesheet" href="../styles/farmer-profile.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="main-nav">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            <a href="farmer-dashboard.html" class="nav-item">
+                <i class="ph ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="farmer-orders.html" class="nav-item">
+                <i class="ph ph-shopping-bag"></i>
+                <span>Orders</span>
+            </a>
+            <a href="farmer-chat.html" class="nav-item">
+                <i class="ph ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="farmer-profile.html" class="nav-item active">
+                <i class="ph-fill ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="profile-header">
+                <div class="avatar-container">
+                    <div class="avatar-large">MJ</div>
+                </div>
+                <h1 class="user-name">Mensah John</h1>
+                <span class="role-badge">Farmer</span>
+                <div class="rating-container">
+                    <i class="ph-fill ph-star rating-icon"></i>
+                    <span class="rating-text">4.8 - 24 reviews</span>
+                </div>
+            </header>
+
+            <div class="profile-content">
+                <div class="menu-card">
+                    <div class="menu-item" data-action="order-history">
+                        <div class="menu-left">
+                            <div class="icon-wrapper"><i class="ph ph-receipt"></i></div>
+                            <span class="menu-text">Order history</span>
+                        </div>
+                        <i class="ph ph-caret-right chevron"></i>
+                    </div>
+                    
+                    <div class="menu-item" data-action="notifications">
+                        <div class="menu-left">
+                            <div class="icon-wrapper"><i class="ph ph-bell"></i></div>
+                            <span class="menu-text">Notifications</span>
+                        </div>
+                        <i class="ph ph-caret-right chevron"></i>
+                    </div>
+                    
+                    <div class="menu-item" data-action="settings">
+                        <div class="menu-left">
+                            <div class="icon-wrapper"><i class="ph ph-gear"></i></div>
+                            <span class="menu-text">Settings</span>
+                        </div>
+                        <i class="ph ph-caret-right chevron"></i>
+                    </div>
+                    
+                    <div class="menu-item" data-action="support">
+                        <div class="menu-left">
+                            <div class="icon-wrapper"><i class="ph ph-question"></i></div>
+                            <span class="menu-text">Help & Support</span>
+                        </div>
+                        <i class="ph ph-caret-right chevron"></i>
+                    </div>
+                </div>
+
+                <div class="menu-card logout-card" id="logoutBtn">
+                    <div class="menu-item no-border">
+                        <div class="menu-left">
+                            <div class="icon-wrapper logout-icon"><i class="ph ph-sign-out"></i></div>
+                            <span class="menu-text logout-text">Log Out</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-bottom-spacer"></div>
+        </main>
+    </div>
+
+    <div id="logoutModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-icon">
+                <i class="ph ph-question"></i>
+            </div>
+            <h2 class="modal-title">Are you sure you want to log out?</h2>
+            <div class="modal-buttons">
+                <button class="btn-leave" id="confirmLogoutBtn">Yes, leave</button>
+                <button class="btn-stay" id="cancelLogoutBtn">No, stay</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/farmer-profile.js"></script>
+</body>
+</html>

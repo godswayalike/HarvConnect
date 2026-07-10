@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Edit Profile</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../styles/transporter-editprofile.css">
+</head>
+<body>
+
+    <div class="mobile-viewport-container">
+        <header class="app-header">
+            <a href="farmer-profile.html" class="btn-back-arrow" aria-label="Go back to profile">
+                <i class="ph ph-caret-left"></i>
+            </a>
+            <h1 class="page-title">Edit profile</h1>
+        </header>
+
+        <main class="form-container">
+            <form id="editProfileForm" onsubmit="handleProfileSave(event)">
+                
+                <div class="input-field-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Kofi Joy" required>
+                </div>
+
+                <div class="input-field-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" placeholder="08172299333" required>
+                </div>
+
+                <div class="input-field-group">
+                    <label for="emailAddress">Email</label>
+                    <input type="email" id="emailAddress" placeholder="kofijoy@gmail.com" required>
+                </div>
+
+                <div class="input-field-group">
+                    <label for="locationDetails">Location</label>
+                    <input type="text" id="locationDetails" placeholder="Region + Market/Town">
+                </div>
+
+                <div class="input-field-group">
+                    <label for="vehicleCapacity">Vehicle Type and Capacity</label>
+                    <input type="text" id="vehicleCapacity" placeholder="Utility Tractor 60-120 HP" required>
+                </div>
+
+                <button type="submit" class="btn-primary-action standard-margin-top">Save changes</button>
+            </form>
+
+            <div class="password-routing-box">
+                <p class="routing-label">Do you want to change your password?</p>
+                <button type="button" class="btn-primary-action" onclick="openPasswordModal()">Change password</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="passwordModal" class="modal-backdrop hidden-overlay">
+        <div class="modal-card dialog-box">
+            <form id="passwordResetForm" onsubmit="handlePasswordUpdate(event)">
+                
+                <div class="input-field-group">
+                    <label for="oldPassword">Enter old password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="oldPassword" required>
+                        <button type="button" class="btn-toggle-reveal" onclick="togglePasswordVisibility('oldPassword', this)">
+                            <i class="ph ph-eye-slash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-field-group">
+                    <label for="newPassword">Enter new Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="newPassword" required>
+                        <button type="button" class="btn-toggle-reveal" onclick="togglePasswordVisibility('newPassword', this)">
+                            <i class="ph ph-eye-slash"></i>
+                        </button>
+                        
+                    </div>
+                    <span class="validation-hint-text"class="validation-hint-text">Must be at least 8 characters with uppercase, lowercase, numbers, and special characters.</span>
+                </div>
+
+                <div class="input-field-group">
+                    <label for="confirmPassword">Confirm new Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="confirmPassword" required>
+                        <button type="button" class="btn-toggle-reveal" onclick="togglePasswordVisibility('confirmPassword', this)">
+                            <i class="ph ph-eye-slash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-action-row">
+                    <button type="button" class="btn-secondary-cancel" onclick="closeAllModals()">Cancel</button>
+                    <button type="submit" class="btn-primary-action btn-modal-confirm">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal-backdrop hidden-overlay">
+        <div class="modal-card status-feedback-box">
+            <div class="success-icon-circle">
+                <i class="ph ph-check"></i>
+            </div>
+            <h2 id="successMessageHeading" class="success-title">Success!</h2>
+            <button type="button" class="btn-primary-action standard-margin-top" onclick="closeAllModals()">Go back</button>
+        </div>
+    </div>
+
+    <script src="../scripts/farmer-editprofile.js"></script>
+</body>
+</html>

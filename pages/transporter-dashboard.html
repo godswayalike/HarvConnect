@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Transporter Dashboard</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../styles/transporter-dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="sidebar-link active"><i class="ph ph-house"></i> Home</a>
+                <a href="../pages/transporter-job.html" class="sidebar-link"><i class="ph ph-briefcase"></i> Jobs</a>
+                <a href="../pages/transporter-chat.html" class="sidebar-link"><i class="ph ph-chat-circle"></i> Chat</a>
+                <a href="../pages/transporter-profile.html" class="sidebar-link"><i class="ph ph-user"></i> Profile</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-user-info">
+                    <span class="welcome-text">Welcome back,</span>
+                    <h1 class="user-name">Kofi Joy</h1>
+                    <div class="location-badge">
+                        <i class="ph ph-map-pin"></i>
+                        <span>Akuapem North, Eastern Region</span>
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                </div>
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="ph ph-bell"></i>
+                </button>
+            </header>
+
+            <div class="content-body">
+                
+                <section class="overview-section">
+                    <h2 class="section-title">Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper earnings-icon">
+                                <i class="ph ph-wallet"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">GHS 3,200</span>
+                                <span class="stat-label">Total Earnings</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper trips-icon">
+                                <i class="ph ph-truck"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">18</span>
+                                <span class="stat-label">Trips Completed</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper monthly-icon">
+                                <i class="ph ph-trend-up"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">GHS 420</span>
+                                <span class="stat-label">This Month</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="requests-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Recent delivery requests</h2>
+                        <a href="#" class="view-all-link">View All</a>
+                    </div>
+
+                    <div class="requests-list">
+                        <div class="request-card" id="request-1">
+                            <div class="request-card-header">
+                                <h3 class="produce-title">Fresh Tomatoes (5 crates)</h3>
+                                <div class="price-distance-box">
+                                    <span class="request-price">GHS 180</span>
+                                    <span class="request-distance">245km</span>
+                                </div>
+                            </div>
+                            <div class="request-route">
+                                <i class="ph ph-map-pin-line route-icon"></i>
+                                <p class="route-details">Kumasi Farm, Accra Center Market</p>
+                            </div>
+                            <button class="btn-accept" onclick="acceptJob('request-1')">Accept Delivery</button>
+                        </div>
+
+                        <div class="request-card" id="request-2">
+                            <div class="request-card-header">
+                                <h3 class="produce-title">Green Peppers (3 baskets)</h3>
+                                <div class="price-distance-box">
+                                    <span class="request-price">GHS 60</span>
+                                    <span class="request-distance">62km</span>
+                                </div>
+                            </div>
+                            <div class="request-route">
+                                <i class="ph ph-map-pin-line route-icon"></i>
+                                <p class="route-details">Techiman, Sunyani</p>
+                            </div>
+                            <button class="btn-accept" onclick="acceptJob('request-2')">Accept Delivery</button>
+                        </div>
+
+                        <div class="request-card" id="request-3">
+                            <div class="request-card-header">
+                                <h3 class="produce-title">Cassava (10 sacks)</h3>
+                                <div class="price-distance-box">
+                                    <span class="request-price">GHS 95</span>
+                                    <span class="request-distance">110km</span>
+                                </div>
+                            </div>
+                            <div class="request-route">
+                                <i class="ph ph-map-pin-line route-icon"></i>
+                                <p class="route-details">Bono, Kumasi</p>
+                            </div>
+                            <button class="btn-accept" onclick="acceptJob('request-3')">Accept Delivery</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <nav class="mobile-nav">
+            <a href="transporter-dashboard.html" class="mobile-nav-link active">
+                <i class="ph ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="transporter-job.html" class="mobile-nav-link">
+                <i class="ph ph-briefcase"></i>
+                <span>Jobs</span>
+            </a>
+            <a href="transporter-chat.html" class="mobile-nav-link">
+                <i class="ph ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="transporter-profile.html" class="mobile-nav-link">
+                <i class="ph ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <div id="toast" class="toast-hidden">Delivery Request Accepted!</div>
+
+    <script src="../scripts/transporter-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Chat</title>
+    <link rel="stylesheet" href="../styles/farmer-chat.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="main-nav" id="mainNav">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            
+            <a href="farmer-dashboard.html" class="nav-item">
+                <i class="ph ph-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="farmer-orders.html" class="nav-item">
+                <i class="ph ph-shopping-bag"></i>
+                <span>Orders</span>
+            </a>
+            <a href="farmer-chat.html" class="nav-item active">
+                <i class="ph-fill ph-chat-circle"></i>
+                <span>Chat</span>
+            </a>
+            <a href="farmer-profile.html" class="nav-item">
+                <i class="ph ph-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            
+            <div id="messagesListView" class="view-section active">
+                <header class="page-header">
+                    <h1 class="page-title">Messages</h1>
+                </header>
+
+                <div class="chat-list">
+                    <div class="chat-item" data-chat-id="1" data-name="Mama Efua Foods">
+                        <div class="avatar bg-green-light">M</div>
+                        <div class="chat-item-content">
+                            <div class="chat-item-header">
+                                <h3 class="contact-name">Mama Efua Foods</h3>
+                                <span class="time">2m</span>
+                            </div>
+                            <div class="chat-item-body">
+                                <p class="last-message">Is the produce ready for pickup?</p>
+                                <span class="unread-badge">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-item" data-chat-id="2" data-name="Accra Fresh Ltd">
+                        <div class="avatar bg-blue-light">A</div>
+                        <div class="chat-item-content">
+                            <div class="chat-item-header">
+                                <h3 class="contact-name">Accra Fresh Ltd</h3>
+                                <span class="time">1h</span>
+                            </div>
+                            <div class="chat-item-body">
+                                <p class="last-message read">Can you deliver by Friday?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-item" data-chat-id="3" data-name="Driver - Kofi">
+                        <div class="avatar bg-green-light">D</div>
+                        <div class="chat-item-content">
+                            <div class="chat-item-header">
+                                <h3 class="contact-name">Driver - Kofi</h3>
+                                <span class="time">3h</span>
+                            </div>
+                            <div class="chat-item-body">
+                                <p class="last-message">I'm 10 minutes away.</p>
+                                <span class="unread-badge">1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-item" data-chat-id="4" data-name="Kumasi foods">
+                        <div class="avatar bg-gray-light">K</div>
+                        <div class="chat-item-content">
+                            <div class="chat-item-header">
+                                <h3 class="contact-name">Kumasi foods</h3>
+                                <span class="time">1d</span>
+                            </div>
+                            <div class="chat-item-body">
+                                <p class="last-message read">I'm already on my way Sir</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="chatRoomView" class="view-section">
+                <header class="chat-room-header">
+                    <button class="back-btn" id="backToList" aria-label="Back to messages">
+                        <i class="ph-bold ph-caret-left"></i>
+                    </button>
+                    <div class="active-contact">
+                        <div class="avatar small bg-green-light" id="activeAvatar">M</div>
+                        <h2 class="active-name" id="activeName">Mama Efua Foods</h2>
+                    </div>
+                    <button class="icon-btn"><i class="ph ph-phone"></i></button>
+                </header>
+
+                <div class="chat-history" id="chatHistory">
+                    </div>
+
+                <form class="chat-input-area" id="chatForm">
+                    <button type="button" class="icon-btn attach-btn"><i class="ph ph-paperclip"></i></button>
+                    <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off" required>
+                    <button type="submit" class="send-btn"><i class="ph-fill ph-paper-plane-right"></i></button>
+                </form>
+            </div>
+            
+            <div class="mobile-bottom-spacer"></div>
+        </main>
+    </div>
+
+    <script src="../scripts/farmer-chat.js"></script>
+</body>
+</html>

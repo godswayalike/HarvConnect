@@ -1,0 +1,90 @@
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed; 
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent background */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 1000; 
+    padding: 24px;
+    opacity: 0; 
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active { 
+    opacity: 1; 
+    pointer-events: auto; 
+}
+
+.modal-container {
+    background: white; 
+    border-radius: 20px;
+    padding: 40px 24px 32px 24px; 
+    width: 100%; 
+    max-width: 340px; /* Keeps it looking like a mobile app dialog */
+    text-align: center; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(20px); 
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-container { 
+    transform: translateY(0); 
+}
+
+.modal-icon {
+    width: 64px; 
+    height: 64px; 
+    border: 4px solid #4A4A4A; 
+    color: #4A4A4A;
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-size: 32px; 
+    margin: 0 auto 24px auto;
+}
+
+.modal-title { 
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-bottom: 32px; 
+    color: var(--text-dark); 
+}
+
+.modal-buttons { 
+    display: flex; 
+    gap: 16px; 
+}
+
+.modal-buttons button {
+    flex: 1; 
+    padding: 14px 0; 
+    border-radius: 12px;
+    font-size: 16px; 
+    font-weight: 500; 
+    cursor: pointer; 
+    transition: 0.2s;
+}
+
+.btn-leave {
+    background: white; 
+    color: #D32F2F;
+    border: 1.5px solid #D32F2F;
+}
+
+.btn-leave:hover { 
+    background: #FFEBEE; 
+}
+
+.btn-stay {
+    background: var(--primary-green); 
+    color: white;
+    border: 1.5px solid var(--primary-green);
+}
+
+.btn-stay:hover { 
+    background: var(--primary-hover); 
+}

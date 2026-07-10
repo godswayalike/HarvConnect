@@ -1,0 +1,233 @@
+:root {
+    --primary-green: #14AE5C;
+    --primary-light: #E2F2E9;
+    --bg-main: #FAFCFB;
+    --text-dark: #1A1A1A;
+    --text-gray: #666666;
+    --border-color: #E0E0E0;
+    --red-action: #D32F2F;
+    --red-light: #FFEBEE;
+    --gold-star: #F4C150;
+    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-family); }
+body { background-color: var(--bg-main); color: var(--text-dark); }
+
+/* --- Layout System --- */
+.app-layout { display: flex; flex-direction: column; min-height: 100vh; }
+.main-content { flex: 1; display: flex; flex-direction: column; position: relative; }
+
+/* --- Profile Header (Gradient) --- */
+.profile-header {
+    background: linear-gradient(180deg, #D4F9E8 0%, #FAFCFB 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px 24px;
+    text-align: center;
+}
+
+.avatar-large {
+    width: 96px;
+    height: 96px;
+    background-color: var(--primary-green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(20, 122, 66, 0.2);
+}
+
+.user-name { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+
+.role-badge {
+    background-color: var(--primary-light);
+    color: var(--primary-green);
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.rating-container { display: flex; align-items: center; gap: 6px; }
+.rating-icon { color: var(--gold-star); font-size: 18px; }
+.rating-text { color: var(--text-gray); font-size: 14px; font-weight: 500; }
+
+/* --- Profile Menu Content --- */
+.profile-content {
+    padding: 0 24px 24px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.menu-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.menu-item:hover { background-color: #F9F9F9; }
+.menu-item:last-child, .menu-item.no-border { border-bottom: none; }
+
+.menu-left { display: flex; align-items: center; gap: 16px; }
+.icon-wrapper {
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-light);
+    color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.menu-text { font-size: 16px; font-weight: 500; }
+.chevron { color: #999; font-size: 20px; }
+
+/* Logout Specific */
+.logout-card { border-color: #FFCDD2; margin-top: 8px; }
+.logout-card .menu-item:hover { background-color: var(--red-light); }
+.logout-icon { background-color: var(--red-light); color: var(--red-action); }
+.logout-text { color: var(--red-action); }
+
+/* --- Navigation & Media Queries --- */
+.main-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 12px 0 16px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 100; }
+.nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #999999; font-size: 12px; gap: 4px; }
+.nav-item i { font-size: 24px; }
+.nav-item.active { color: var(--primary-green); font-weight: 600; }
+.mobile-bottom-spacer { height: 80px; }
+
+@media (min-width: 768px) {
+    .app-layout { flex-direction: row; }
+    .main-nav { position: sticky; top: 0; width: 240px; height: 100vh; flex-direction: column; justify-content: flex-start; padding: 32px 16px; box-shadow: 2px 0 10px rgba(0,0,0,0.05); border-right: 1px solid #E0E0E0; }
+    .nav-item { flex-direction: row; padding: 16px; border-radius: 12px; font-size: 15px; gap: 16px; margin-bottom: 8px; }
+    .nav-item.active { background-color: #E8F7EE; }
+    .mobile-bottom-spacer { display: none; }
+    .profile-header { border-radius: 0 0 24px 24px; margin-bottom: 24px; }
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed; 
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent background */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 1000; 
+    padding: 24px;
+    opacity: 0; 
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active { 
+    opacity: 1; 
+    pointer-events: auto; 
+}
+
+.modal-container {
+    background: white; 
+    border-radius: 20px;
+    padding: 40px 24px 32px 24px; 
+    width: 100%; 
+    max-width: 340px; /* Keeps it looking like a mobile app dialog */
+    text-align: center; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(20px); 
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-container { 
+    transform: translateY(0); 
+}
+
+.modal-icon {
+    width: 64px; 
+    height: 64px; 
+    border: 4px solid #4A4A4A; 
+    color: #4A4A4A;
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-size: 32px; 
+    margin: 0 auto 24px auto;
+}
+
+.modal-title { 
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-bottom: 32px; 
+    color: var(--text-dark); 
+}
+
+.modal-buttons { 
+    display: flex; 
+    gap: 16px; 
+}
+
+.modal-buttons button {
+    flex: 1; 
+    padding: 14px 0; 
+    border-radius: 12px;
+    font-size: 16px; 
+    font-weight: 500; 
+    cursor: pointer; 
+    transition: 0.2s;
+}
+
+.btn-leave {
+    background: white; 
+    color: #D32F2F;
+    border: 1.5px solid #D32F2F;
+}
+
+.btn-leave:hover { 
+    background: #FFEBEE; 
+}
+
+.btn-stay {
+    background: var(--primary-green); 
+    color: white;
+    border: 1.5px solid var(--primary-green);
+}
+
+.btn-stay:hover { 
+    background: var(--primary-hover); 
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-green);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 36px;
+}
+
+.sidebar-brand img {
+    height: 80px;
+}

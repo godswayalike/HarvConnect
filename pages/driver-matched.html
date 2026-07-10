@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvConnect - Driver Matched</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../styles/get-transport.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/HarvConnect-logo.png" alt="HarvConnect Logo">
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="farmer-dashboard.html" class="sidebar-link"><i class="ph ph-house"></i> Dashboard</a>
+                <a href="farmer-orders.html" class="sidebar-link active"><i class="ph ph-shopping-bag"></i> Orders</a>
+                <a href="farmer-chat.html" class="sidebar-link"><i class="ph ph-chat-circle"></i> Chat</a>
+                <a href="farmer-profile.html" class="sidebar-link"><i class="ph ph-user"></i> Profile</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="app-header">
+                <a href="farmer-orders.html" class="btn-back-arrow"><i class="ph ph-caret-left"></i></a>
+                <h1 class="page-title">Driver matched</h1>
+            </header>
+
+            <div class="scroll-body">
+                
+                <div class="success-banner">
+                    <div class="success-check-circle">
+                        <i class="ph ph-check"></i>
+                    </div>
+                    <h2 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin-bottom: 8px;">You're all set!</h2>
+                    <p style="font-size: 0.9rem; color: #4B5563; line-height: 1.5;">Kofi Asante is on his way to pickup your fresh tomatoes.</p>
+                </div>
+
+                <div class="driver-detail-card">
+                    <div class="driver-header">
+                        <div style="display: flex; align-items: center;">
+                            <div class="avatar-wrapper" style="background-color: #D1FAE5; color: #059669; width: 44px; height: 44px; font-size: 1.1rem; margin-right: 12px;">K</div>
+                            <div>
+                                <div class="card-title">Kofi Asante <i class="ph-fill ph-star rating-star"></i> 4.9</div>
+                                <div class="card-subtitle">Pickup Truck - 1 Ton</div>
+                            </div>
+                        </div>
+                        <button class="btn-call"><i class="ph ph-phone"></i></button>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">ETA</div>
+                            <div class="stat-value">18 min</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Distance</div>
+                            <div class="stat-value">4.2 km</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Fee</div>
+                            <div class="stat-value price-green">GHS 180</div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary-action" onclick="alert('Opening map tracker interface...')">Track delivery</button>
+                </div>
+
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="farmer-dashboard.html" class="nav-item"><i class="ph ph-house"></i>Home</a>
+            <a href="farmer-orders.html" class="nav-item active"><i class="ph ph-shopping-bag"></i>Orders</a>
+            <a href="farmer-chat.html" class="nav-item"><i class="ph ph-chat-circle"></i>Chat</a>
+            <a href="farmer-profile.html" class="nav-item"><i class="ph ph-user"></i>Profile</a>
+        </nav>
+
+    </div>
+</body>
+</html>
